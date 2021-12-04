@@ -1,0 +1,16 @@
+<<<<<<<<<<<< ------------ !         !        !            ! ------------ >>>>>>>>>>>>
+IMPORTANT: Please do not change the format of the file as this may disrupt program execution
+<<<<<<<<<<<< ------------ !         !        !            ! ------------ >>>>>>>>>>>>
+
+This file contains the settings for the ordinary differential equation (ODE) that will be solved.
+ -> default values as well as parameter types are provided as an indication of what can be input
+ -> providing unsuitable values will most likely lead to incorrect results
+
+Initial time t_0 (float): 0.0
+
+Initial y value y_0 (float): 1.0
+
+Total number of steps N (integer): 100
+
+Time step dt (float): 0.01
+
