@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(header-files)
 include_directories(source-files)
+include_directories(eigen)
 
 FILE(GLOB hHeaders *.h)
 FILE(GLOB cppSources *.cpp)
