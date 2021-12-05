@@ -13,7 +13,7 @@ namespace E = Eigen;
 class ODE{
 
 public:
-    explicit ODE(SetUp UserSetUp);
+    explicit ODE(SetUp user_setup);
     void Solve();
 
 protected:

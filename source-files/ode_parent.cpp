@@ -5,17 +5,17 @@
 #include "ode_parent.h"
 #include "setup.h"
 
-ODE::ODE(SetUp UserSetUp) {
+ODE::ODE(SetUp user_setup) {
 
     // Declaring all the members
-    t = &UserSetUp.t;
+    t = &user_setup.t;
     t_0 = t[0];
-    y = &UserSetUp.y;
-    dt = UserSetUp.dt;
-    N = UserSetUp.N;
-    x = UserSetUp.x;
-    RHS = &UserSetUp.RHS;
-    sampling_frequency = &UserSetUp.sampling_frequency;
+    y = &user_setup.y;
+    dt = user_setup.dt;
+    N = user_setup.N;
+    x = user_setup.x;
+    RHS = &user_setup.RHS;
+    sampling_frequency = &user_setup.sampling_frequency;
 
     // Filling the first entry of y_short_term
     y_short_term[0] = y[0]

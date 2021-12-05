@@ -6,7 +6,7 @@
 #include 'forward_euler.h'
 #include 'setup.h'
 
-AdamsBashforth_2::AdamsBashforth_2(SetUp UserSetUp) : ForwardEuler (SetUp UserSetUp) {};
+AdamsBashforth_2::AdamsBashforth_2(SetUp user_setup) : ForwardEuler (SetUp user_setup) {};
 
 void AdamsBashforth_2::InitializeYShortTermAB2() {
     y_short_term(1) = OneStepFE(t_0 + dt)

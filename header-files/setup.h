@@ -7,18 +7,23 @@
 
 #include "Eigen/Dense"
 
+
+#include <string> // TODO Delete if no longer necessary
+
 namespace E = Eigen;
 
 class SetUp {
-
+public:
     int N = 50;
     double dt = 0.1;
 
     double x = 0.0;
 
-    auto t = E::ArrayXd::LinSpaced(N+1, 0, N*dt);;
+    std::string method = "ForwardEuler";
 
-    auto y = E::ArrayXD::Ones(N);
+    E::ArrayXd t = E::ArrayXd::LinSpaced(N+1, 0, N*dt);;
+
+    E::ArrayXd y = E::ArrayXd::Ones(N);
     int sampling_frequency = 2;
 
     double RHS(double a, double b) {

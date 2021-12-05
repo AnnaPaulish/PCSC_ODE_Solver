@@ -37,6 +37,7 @@ METHODS
         -   AdamsBashforth_2
         -   AdamsBashforth_3
         -   AdamsBashforth_4
+        -   RungeKutta
 
 Y POLYNOMIAL COEFFICIENTS
     The Y Polynomial Coefficients are used to compute the right hand side of the ODE.

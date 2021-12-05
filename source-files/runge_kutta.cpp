@@ -5,7 +5,7 @@
 #include 'runge_kutta.h'
 #include 'setup.h'
 
-RungeKutta::RungeKutta(SetUp UserSetUp) : ODE (SetUp UserSetUp) {};
+RungeKutta::RungeKutta(SetUp user_setup) : ODE (SetUp user_setup) {};
 
 RungeKutta::OneStep(double t) {
     // Calculating the individual components of the step prediction
