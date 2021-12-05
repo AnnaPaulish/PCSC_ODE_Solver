@@ -7,6 +7,6 @@
 
 ForwardEuler::ForwardEuler(SetUp UserSetUp) : ODE (SetUp UserSetUp) {};
 
-ForwardEuler::OneStepFE() {
-    return y_short_term(0) + dt * RHS(y_short_term(0), double t, double x);
+ForwardEuler::OneStepFE(double t) {
+    return y_short_term(0) + dt * RHS(y_short_term(0), t - dt, x);
 }

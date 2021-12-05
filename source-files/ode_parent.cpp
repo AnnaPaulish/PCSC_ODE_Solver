@@ -29,7 +29,7 @@ void ODE::Solve() {
     document_y_short_term();
 
     for (int iteration = method_length; iteration <= N; iteration++) {
-        y_new = one_step(iteration * dt + t_0, x);
+        y_new = one_step(iteration * dt + t_0);
 
         update_y_short_term(y_new);
 

@@ -9,9 +9,13 @@
 AdamsBashforth_2::AdamsBashforth_2(SetUp UserSetUp) : ForwardEuler (SetUp UserSetUp) {};
 
 void AdamsBashforth_2::InitializeYShortTermAB2() {
-    y_short_term(1) = OneStepFE(y_short_term(0), t_0 + dt, x)
+    y_short_term(1) = OneStepFE(t_0 + dt)
 }
 
-double AdamsBashforth_2::OneStepAB2(double t, double x) {
-    return y_short_term(1) + dt * (3 / 2 * RHS(y_short_term(1), t - dt, x) - 1 / 2 * RHS(y_short_term(0), t - 2 * dt, x));
+double AdamsBashforth_2::OneStepAB2(double t) {
+    // Calculating the individual components of the gradient estimation
+    auto term_1 = 3 / 2 * RHS(y_short_term(1), t - dt, x);
+    auto term_2 = - 1 / 2 * RHS(y_short_term(0), t - 2 * dt, x)
+
+    return y_short_term(1) + dt * (term_1 + term_2);
 }

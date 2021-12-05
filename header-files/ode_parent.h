@@ -28,7 +28,7 @@ protected:
 
     double RHS;
     virtual void InitializeYShortTerm();
-    virtual double OneStep(double t, double x) = 0;
+    virtual double OneStep(double t) = 0;
 
 private:
     const int sampling_frequency;

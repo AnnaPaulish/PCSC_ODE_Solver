@@ -8,7 +8,7 @@
 #include "forward_euler.h"
 #include 'setup.h'
 
-class AdamsBashforth_2: public ODE {
+class AdamsBashforth_2: public ForwardEuler {
 
 public:
     AdamsBashforth_2(SetUp UserSetUP);
@@ -19,8 +19,8 @@ protected:
     void InitializeYShortTermAB2();
     void InitializeYShortTerm = &InitializeYShortTermAB2;
 
-    double OneStepAB2(double t, double x);
-    double OneStep = &one_step_AB_2;
+    double OneStepAB2(double t);
+    double OneStep = &one_step_AB2;
 
 };
 

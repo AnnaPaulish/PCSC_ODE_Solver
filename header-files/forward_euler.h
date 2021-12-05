@@ -16,7 +16,7 @@ public:
 protected:
     int method_length = 1;
 
-    double OneStepFE(double t, double x);
+    double OneStepFE(double t);
     double OneStep = &one_step_FE;
 
 };
