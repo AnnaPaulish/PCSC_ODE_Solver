@@ -3,15 +3,17 @@
 //
 
 #include "ode_parent.h"
-#include "setup_class.h"
+#include "setup.h"
 
 ODE::ODE(SetUp UserSetUp) {
 
     // Declaring all the members
     t = &UserSetUp.t;
+    t_0 = t[0];
     y = &UserSetUp.y;
     dt = UserSetUp.dt;
-    N = UserSetUp.N
+    N = UserSetUp.N;
+    x = UserSetUp.x;
     RHS = &UserSetUp.RHS;
     sampling_frequency = &UserSetUp.sampling_frequency;
 
@@ -19,13 +21,15 @@ ODE::ODE(SetUp UserSetUp) {
     y_short_term[0] = y[0]
 }
 
-void ODE::solve() {
-    initialize_y_short_term()
+void ODE::Solve() {
+    if (method_length != 1) {
+        initialize_y_short_term()
+    }
 
     document_y_short_term();
 
-    for (int iteration = 1; iteration <= N; iteration++) {
-        y_new = one_step();
+    for (int iteration = method_length; iteration <= N; iteration++) {
+        y_new = one_step(iteration * dt + t_0, x);
 
         update_y_short_term(y_new);
 
@@ -37,7 +41,7 @@ void ODE::solve() {
 
 }
 
-void ODE::document_y_short_term() {
+void ODE::DocumentYShortTerm() {
 
     if (sampling_frequency < method_length) {
         for (int init_count = 1; init_count < method_length; init_count++) {
@@ -50,7 +54,7 @@ void ODE::document_y_short_term() {
 }
 
 
-void ODE::update_y_short_term(double y_new){
+void ODE::UpdateYShortTerm(double y_new){
 
     if (method_length == 1) {
         y_short_term(0) = y_new;
