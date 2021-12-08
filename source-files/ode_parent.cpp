@@ -15,6 +15,7 @@ ODE::ODE(SetUp user_setup) {
     N = user_setup.N;
     x = user_setup.x;
     RHS = &user_setup.RHS;
+    E::ArrayXd y_short_term(method_length);
     sampling_frequency = &user_setup.sampling_frequency;
 
     // Filling the first entry of y_short_term

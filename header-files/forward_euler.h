@@ -6,7 +6,7 @@
 #define ODE_SOLVER_PROJECT_FORWARD_EULER_H
 
 #include "ode_parent.h"
-#include 'setup.h'
+#include "setup.h"
 
 class ForwardEuler: public ODE {
 
@@ -17,7 +17,7 @@ protected:
     int method_length = 1;
 
     double OneStepFE(double t);
-    double OneStep = &one_step_FE;
+    double OneStep(double t);
 
 };
 

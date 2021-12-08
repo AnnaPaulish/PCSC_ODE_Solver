@@ -6,7 +6,7 @@
 #define ODE_SOLVER_PROJECT_ODE_CLASS_H
 
 #include <Eigen/Dense>
-#include 'setup.h'
+#include "setup.h"
 
 namespace E = Eigen;
 
@@ -20,9 +20,9 @@ protected:
     const double dt;
     const double t_0;
     const double x;
-    const int N
+    const int N;
     const int method_length;
-    E::Array<double, method_length, 1> y_short_term; // Static size is applicable as it is dependent on the method and does not change
+    E::ArrayXd y_short_term; // Static size is applicable as it is dependent on the method and does not change
     E::ArrayXd & y;
     const E::ArrayXd & t;
 
@@ -33,7 +33,7 @@ protected:
 private:
     const int sampling_frequency;
 
-    void DocumentYShortTerm()
+    void DocumentYShortTerm();
     void UpdateYShortTerm(double y_new);
 
 };

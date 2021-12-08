@@ -14,6 +14,7 @@
 #include "adams_bashforth_3.h"
 #include "adams_bashforth_4.h"
 #include "runge_kutta.h"
+#include "backward_euler.h"
 
 struct MethodError : public std::exception{
     const char * what () const throw () {
@@ -29,6 +30,7 @@ std::any MakeMethod(SetUp user_setup){
     else if (method == "AdamsBashforth_3") return AdamsBashforth_3(user_setup);
     else if (method == "AdamsBashforth_4") return AdamsBashforth_4(user_setup);
     else if (method == "RungeKutta") return RungeKutta(user_setup);
+    else if (method == "BackwardEuler") return BackwardEuler(user_setup);
     else throw MethodError();
 
 }

@@ -2,8 +2,8 @@
 // Created by Leonhard Driever on 05.12.21.
 //
 
-#include 'runge_kutta.h'
-#include 'setup.h'
+#include "runge_kutta.h"
+#include "setup.h"
 
 RungeKutta::RungeKutta(SetUp user_setup) : ODE (SetUp user_setup) {};
 

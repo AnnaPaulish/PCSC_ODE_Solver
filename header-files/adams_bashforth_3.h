@@ -6,7 +6,7 @@
 #define ODE_SOLVER_PROJECT_ADAMS_BASHFORTH_3_H
 
 #include "adams_bashforth_2.h"
-#include 'setup.h'
+#include "setup.h"
 
 class AdamsBashforth_3: public AdamsBashforth_2 {
 
@@ -17,10 +17,10 @@ protected:
     int method_length = 3;
 
     void InitializeYShortTermAB3();
-    void InitializeYShortTerm = &InitializeYShortTermAB3;
+    void InitializeYShortTerm();
 
-    double OneStepAB3(double t, double x);
-    double OneStep = &one_step_AB3;
+    double OneStepAB3(double t);
+    double OneStep(double t);
 
 };
 
