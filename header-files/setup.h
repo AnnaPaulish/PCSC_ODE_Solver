@@ -1,9 +1,11 @@
-//
-// Created by Leonhard Driever on 03.12.21.
-//
 
 #ifndef ODE_SOLVER_PROJECT_SETUP_H
 #define ODE_SOLVER_PROJECT_SETUP_H
+
+#include "string"
+#include <Eigen/Dense>
+namespace E = Eigen;
+
 class SetUp {
 public:
     // Constructor and destructor
@@ -12,11 +14,11 @@ public:
     int N = 5; // total number of steps N
     double dt = 0.1; // time step dt
     double x = 0.0;
-    Eigen::ArrayXd t = Eigen::ArrayXd::LinSpaced(N+1, 0, N*dt);
-    Eigen::ArrayXd y = Eigen::ArrayXd::Ones(N);
+    E::ArrayXd t = E::ArrayXd::LinSpaced(N+1, 0, N*dt);
+    E::ArrayXd y = E::ArrayXd::Ones(N);
 
-    int polynomial_degree = 1; //
-    Eigen::ArrayXd poly_coefs_y = Eigen::ArrayXd::Ones(polynomial_degree+1);
+    int polynomial_degree = 1; 
+    E::ArrayXd poly_coefs_y = E::ArrayXd::Ones(polynomial_degree+1);
 
     int sampling_frequency = 2;
 
@@ -24,10 +26,10 @@ public:
 
     std::string output_path; // Output File Path: path/my_output.dat
     bool console_output; // True if we want to get the result in Console
-    //bool console_input;
     std::string method; // solving method (string without quotation marks)
 
     bool testing; // True if we want to test
+
     // methods
     void read_settings(std::string settings_file_name);
     void read_command_line();

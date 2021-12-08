@@ -1,10 +1,8 @@
 
 #include <iostream>
-#include <Eigen/Dense>
-#include <Eigen/Sparse>
-#include <array>
-
 #include "setup.h"
+
+
 SetUp::SetUp(std::string file_name) {
     read_settings(file_name);
     make_t();
