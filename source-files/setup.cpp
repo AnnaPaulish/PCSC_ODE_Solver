@@ -101,8 +101,7 @@ double SetUp::RHS(double y_value, double t_value, double x_value) {
 }
 void SetUp::make_t() {
 
-    t[0] = t_0;
-    for (int i=0; i<(N); i++){
-        t[i+1] = (i+1)*dt;
+    for (int i=0; i<=N; i++){
+        t[i] = t_0 + i*dt;
     }
 }
