@@ -1,6 +1,4 @@
-//
-// Created by Leonhard Driever on 03.12.21.
-//
+
 #include <iostream>
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
