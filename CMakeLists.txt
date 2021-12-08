@@ -5,9 +5,11 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(header-files)
 include_directories(source-files)
+
 include_directories(eigen)
 
-FILE(GLOB hHeaders *.h)
-FILE(GLOB cppSources *.cpp)
+file(GLOB SOURCES  ${PROJECT_SOURCE_DIR}/source-files/*.cpp)
+file(GLOB HEADERS  ${PROJECT_SOURCE_DIR}/header-files/*.h)
 
-add_executable(ODE main.cpp ${cppSources} ${hHeaders})
+
+add_executable(ODE main.cpp ${SOURCES} ${HEADERS})
