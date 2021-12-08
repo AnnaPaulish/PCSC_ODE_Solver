@@ -8,8 +8,9 @@
 double BackwardEuler::OneStep(double t) {
     double residual = 1;
     double cut_off = 0.01;
+    double y_next = 0;
 
-    double y = y_short_term(0)
+    double y = y_short_term(0);
 
     while (residual > cut_off) {
         y_next = y + dt * RHS(y, t, x);
