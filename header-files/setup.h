@@ -13,7 +13,7 @@ public:
 
     int N = 5; // total number of steps N
     double dt = 0.1; // time step dt
-    double x = 0.0;
+
     E::ArrayXd t = E::ArrayXd::LinSpaced(N+1, 0, N*dt);
     E::ArrayXd y = E::ArrayXd::Ones(N);
 
