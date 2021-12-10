@@ -5,6 +5,8 @@
 #include "backward_euler.h"
 #include "setup.h"
 
+BackwardEuler::BackwardEuler(SetUp user_setup) : ODE (user_setup) {}
+
 double BackwardEuler::OneStep(double t) {
     double residual = 1;
     double cut_off = 0.01;

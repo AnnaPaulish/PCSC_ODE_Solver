@@ -16,7 +16,7 @@ ODE::ODE(SetUp user_setup) {
     x = user_setup.x;
     RHS = &user_setup.RHS;
     E::ArrayXd y_short_term(method_length);
-    sampling_frequency = &user_setup.sampling_frequency;
+    sampling_frequency = user_setup.sampling_frequency;
 
     // Filling the first entry of y_short_term
     y_short_term[0] = y[0]
@@ -24,18 +24,18 @@ ODE::ODE(SetUp user_setup) {
 
 void ODE::Solve() {
     if (method_length != 1) {
-        initialize_y_short_term()
+        InitializeYShortTerm();
     }
 
-    document_y_short_term();
+    DocumentYShortTerm();
 
     for (int iteration = method_length; iteration <= N; iteration++) {
-        y_new = one_step(iteration * dt + t_0);
+        auto y_new = OneStep(iteration * dt + t_0);
 
-        update_y_short_term(y_new);
+        UpdateYShortTerm(y_new);
 
         if (iteration % sampling_frequency) {
-            y(iteration / sampling_frequency) = y_new
+            y(iteration / sampling_frequency) = y_new;
         }
 
     }
