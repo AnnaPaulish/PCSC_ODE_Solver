@@ -67,7 +67,7 @@ void ODE::UpdateYShortTerm(double y_new){
     }
 
     else {
-        y_short_term(y_short_term(E::seq(0, method_length - 2))) = y_short_term(E::seq(1, method_length - 1));
+        y_short_term(E::seq(0, method_length - 2)) = y_short_term(E::seq(1, method_length - 1));
         y_short_term(method_length - 1) = y_new;
     };
 }
