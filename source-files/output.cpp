@@ -10,7 +10,7 @@ Output::Output(SetUp user_setup) {
     t = user_setup.t;
     y = user_setup.y;
     if (console_output){
-        write_screen();
+        write_to_screen();
     }
     else{
         write_file(user_setup.output_path);
@@ -38,7 +38,7 @@ void Output::write_file(std::string path){
 
 
 }
-void Output::write_screen() {
+void Output::write_to_screen() {
     std::cout << "Solution of ODE: \n";
     for (int i=0;i<=y.size();i++){
         std::cout << "y["<<i<<"] = "<<y[i]<<std::endl;
