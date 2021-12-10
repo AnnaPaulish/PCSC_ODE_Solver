@@ -5,7 +5,7 @@
 #include "backward_euler.h"
 #include "setup.h"
 
-BackwardEuler::BackwardEuler(SetUp user_setup) : ODE (user_setup) {}
+BackwardEuler::BackwardEuler(SetUp user_setup) : ODE (user_setup) {y_short_term.resize(method_length);}
 
 double BackwardEuler::OneStep(double t) {
     double residual = 1;

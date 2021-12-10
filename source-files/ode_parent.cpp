@@ -12,8 +12,7 @@ ODE::ODE(SetUp user_setup) {
     N = user_setup.N;
     x = user_setup.x;
     RHS = [&](const double y,const double t,const double x){return user_setup.RHS(y, t, x);};
-    method_length = 1;
-    E::ArrayXd y_short_term(method_length);
+    E::ArrayXd y_short_term(1);
     sampling_frequency = user_setup.sampling_frequency;
 
     // Filling the first entry of y_short_term

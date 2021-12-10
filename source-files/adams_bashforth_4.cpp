@@ -6,15 +6,11 @@
 #include "adams_bashforth_3.h"
 #include "setup.h"
 
-AdamsBashforth_4::AdamsBashforth_4(SetUp user_setup) : AdamsBashforth_3 (user_setup) {};
+AdamsBashforth_4::AdamsBashforth_4(SetUp user_setup) : AdamsBashforth_3 (user_setup) {y_short_term.resize(method_length);};
 
 void AdamsBashforth_4::InitializeYShortTermAB4() {
     InitializeYShortTermAB3();
     y_short_term(3) = OneStepAB3(t_0 + 3 * dt);
-}
-
-void AdamsBashforth_4::InitializeYShortTerm() {
-    this->InitializeYShortTermAB4();
 }
 
 double AdamsBashforth_4::OneStepAB4(double t) {
@@ -25,8 +21,4 @@ double AdamsBashforth_4::OneStepAB4(double t) {
     auto term_4 = - 9 / 24 * RHS(y_short_term(0), t - 4 * dt, x);
 
     return y_short_term(3) + dt * (term_1 + term_2 + term_3 + term_4);
-}
-
-double AdamsBashforth_4::OneStep(double t) {
-    return this->OneStepAB4(t);
 }
