@@ -3,9 +3,8 @@
 #include <fstream>
 #include "setup.h"
 
-
-SetUp::SetUp(std::string file_name) {
-    read_settings(file_name);
+SetUp::SetUp() {
+    read_settings();
     make_t();
 }
 void SetUp::read_file(std::string settings_file_name) {
@@ -80,7 +79,8 @@ void SetUp::read_console() {
     else { testing = false;}
 
 }
-void SetUp::read_settings(std::string settings_file_name) {
+void SetUp::read_settings() {
+    std::string settings_file_name = "set.txt"; // TODO: read from CL or console
     if (settings_file_name == ""){
         std::cout<<"reading console...\n";
         read_console();
@@ -91,7 +91,7 @@ void SetUp::read_settings(std::string settings_file_name) {
     }
 }
 
-double SetUp::RHS(double y_value, double t_value, double x_value) {
+double SetUp::RHS(double y_value, double t_value = 0, double x_value = 0) {
     double rhs = 0;
     for (int i=0; i<(polynomial_degree + 1); i++){
         rhs += pow(y_value, i) * poly_coefs_y[i];
@@ -100,7 +100,9 @@ double SetUp::RHS(double y_value, double t_value, double x_value) {
 }
 void SetUp::make_t() {
 
-    for (int i=0; i<=N; i++){
-        t[i] = t_0 + i*dt;
+    t[0] = t_0;
+    for (int i=0; i<(N); i++){
+        t[i+1] = (i+1)*dt;
     }
+    std::cout<<"finished";
 }
