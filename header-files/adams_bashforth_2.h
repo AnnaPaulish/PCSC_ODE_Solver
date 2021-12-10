@@ -20,7 +20,7 @@ protected:
     void InitializeYShortTerm();
 
     double OneStepAB2(double t);
-    double OneStep(double t);
+    double OneStep(double t) {return this->OneStepAB2(t);};
 
 };
 

@@ -11,7 +11,7 @@ ODE::ODE(SetUp user_setup) {
     dt = user_setup.dt;
     N = user_setup.N;
     x = user_setup.x;
-    RHS = &SetUp::RHS; // is it fine?
+    RHS = [&](const double y,const double t,const double x){return user_setup.RHS(y, t, x);};
     method_length = 1;
     E::ArrayXd y_short_term(method_length);
     sampling_frequency = user_setup.sampling_frequency;
