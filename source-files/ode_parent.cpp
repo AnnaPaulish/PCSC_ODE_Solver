@@ -16,10 +16,9 @@ ODE::ODE(SetUp user_setup) {
     coefs = user_setup.poly_coefs_y;
 
     RHS = [&]( const double y,const double t,const double x){return user_setup.RHS( coefs, y, t, x);};
-    y_short_term = E::ArrayXd(1);
     sampling_frequency = user_setup.sampling_frequency;
 
-    // Filling the first entry of y_short_term
+    y_short_term = E::ArrayXd(1);
     y_short_term(0) = user_setup.y[0];
 }
 
@@ -29,9 +28,9 @@ E::ArrayXd ODE::Solve(SetUp &user_setup) {
     if (method_length != 1) {
         InitializeYShortTerm();
     }
-    std::cout << "before YSTdocumentaion\n";
+
     DocumentYShortTerm();
-    std::cout << "after YST documentaion\n"<<std::flush;
+
     double y_new;
     for (int iteration = method_length; iteration <= N; iteration++) {
         y_new = OneStep(iteration * dt + t_0);
@@ -42,6 +41,9 @@ E::ArrayXd ODE::Solve(SetUp &user_setup) {
 
         UpdateYShortTerm(y_new);
     }
+
+    std::cout << "solved the ODE...\n";
+
     return y;
 }
 

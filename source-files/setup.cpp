@@ -113,5 +113,5 @@ void SetUp::make_t() {
     for (int i=1; i<(solution_size); i++){
         t[i] = i * sampling_frequency * dt;
     }
-    std::cout << "finished setup" << std::endl;
+    std::cout << "finished setup..." << std::endl;
 }

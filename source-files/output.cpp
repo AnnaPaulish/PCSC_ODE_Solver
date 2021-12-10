@@ -40,8 +40,6 @@ void Output::write_file(std::string path){
         output_file << t[i] << " " << y[i] << std::endl;
     }
 
-    output_file << 1 << " " << 2 << std::endl;
-
     output_file.flush();
     output_file.close();
 }
@@ -52,7 +50,7 @@ void Output::write_to_screen() {
     std::cout << std::showpos;
     std::cout << std::setprecision(4);
 
-    std::cout << "Solution of ODE: \n";
+    std::cout << "\nSolution of ODE: \n";
     std::cout << "Time" << "\t\t\ty-value\n";
 
     for (int i = 0; i < y.size(); i++){

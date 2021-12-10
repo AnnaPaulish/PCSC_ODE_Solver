@@ -5,7 +5,7 @@
 #include "runge_kutta.h"
 #include "setup.h"
 
-RungeKutta::RungeKutta(SetUp user_setup) : ODE (user_setup) {y_short_term.resize(method_length);};
+RungeKutta::RungeKutta(SetUp user_setup) : ODE (user_setup) {y_short_term.conservativeResize(method_length);};
 
 double RungeKutta::OneStep(double t) {
     // Calculating the individual components of the step prediction
