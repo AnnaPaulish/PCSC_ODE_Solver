@@ -13,10 +13,6 @@ void AdamsBashforth_3::InitializeYShortTermAB3() {
     y_short_term(2) = OneStepAB2(t_0 + 2 * dt);
 }
 
-void AdamsBashforth_3::InitializeYShortTerm() {
-    this->InitializeYShortTermAB3();
-}
-
 double AdamsBashforth_3::OneStepAB3(double t) {
     // Calculating the individual components of the gradient estimation
     auto term_1 = 23 / 12 * RHS(y_short_term(2), t - dt, x);
@@ -24,8 +20,4 @@ double AdamsBashforth_3::OneStepAB3(double t) {
     auto term_3 = 5 / 12 * RHS(y_short_term(0), t - 3 * dt, x);
 
     return y_short_term(2) + dt * (term_1 + term_2 + term_3);
-}
-
-double AdamsBashforth_3::OneStep(double t) {
-    return this->OneStepAB3(t);
 }

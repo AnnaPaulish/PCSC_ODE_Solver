@@ -17,7 +17,7 @@ protected:
     int method_length = 1;
 
     double OneStepFE(double t);
-    double OneStep(double t);
+    double OneStep(double t) {return this->OneStepFE(t);};
 
 };
 

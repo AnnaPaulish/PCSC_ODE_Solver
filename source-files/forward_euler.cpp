@@ -11,8 +11,3 @@ double ForwardEuler::OneStepFE(double t) {
     return y_short_term(0) + dt * RHS(y_short_term(0), t - dt, x);
 }
 
-double ForwardEuler::OneStep(double t) {
-    return this->OneStepFE(t);
-}
-
-// double ForwardEuler::OneStep = &ForwardEuler::OneStepFE;

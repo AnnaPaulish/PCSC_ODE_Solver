@@ -17,7 +17,7 @@ protected:
     int method_length = 2;
 
     void InitializeYShortTermAB2();
-    void InitializeYShortTerm();
+    void InitializeYShortTerm() {this->InitializeYShortTermAB2();};
 
     double OneStepAB2(double t);
     double OneStep(double t) {return this->OneStepAB2(t);};
