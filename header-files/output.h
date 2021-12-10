@@ -1,5 +1,3 @@
-
-
 #ifndef ODE_SOLVER_PROJECT_WRITE_OUTPUT_CLASS_H
 #define ODE_SOLVER_PROJECT_WRITE_OUTPUT_CLASS_H
 
@@ -19,7 +17,7 @@ private:
     E::ArrayXd t;
 
     void write_file(std::string path);
-    void write_screen();
+    void write_to_screen();
 
 
 };

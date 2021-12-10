@@ -11,9 +11,8 @@ ODE::ODE(SetUp user_setup) {
     dt = user_setup.dt;
     N = user_setup.N;
     x = user_setup.x;
-    RHS = &SetUp::RHS; // is it fine?
-    method_length = 1;
-    E::ArrayXd y_short_term(method_length);
+    RHS = [&](const double y,const double t,const double x){return user_setup.RHS(y, t, x);};
+    E::ArrayXd y_short_term(1);
     sampling_frequency = user_setup.sampling_frequency;
 
     // Filling the first entry of y_short_term
@@ -24,8 +23,9 @@ void ODE::Solve() {
     if (method_length != 1) {
         InitializeYShortTerm();
     }
+
     DocumentYShortTerm();
-    double y_new = 0;
+    double y_new;
     for (int iteration = method_length; iteration <= N; iteration++) {
         y_new = OneStep(iteration * dt + t_0);
 

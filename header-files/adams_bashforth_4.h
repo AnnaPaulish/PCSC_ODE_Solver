@@ -17,10 +17,10 @@ protected:
     const int method_length = 4;
 
     void InitializeYShortTermAB4();
-    void InitializeYShortTerm();
+    void InitializeYShortTerm() {this->InitializeYShortTermAB4();};
 
     double OneStepAB4(double t);
-    double OneStep(double t);
+    double OneStep(double t) {return this->OneStepAB4(t);};
 
 };
 

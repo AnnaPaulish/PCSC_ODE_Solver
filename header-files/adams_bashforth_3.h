@@ -17,10 +17,10 @@ protected:
     int method_length = 3;
 
     void InitializeYShortTermAB3();
-    void InitializeYShortTerm();
+    void InitializeYShortTerm() {this->InitializeYShortTermAB3();};
 
     double OneStepAB3(double t);
-    double OneStep(double t);
+    double OneStep(double t){return this->OneStepAB3(t);};
 
 };
 
