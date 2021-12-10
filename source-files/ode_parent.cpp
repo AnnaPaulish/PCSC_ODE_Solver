@@ -13,8 +13,11 @@ ODE::ODE(SetUp user_setup) {
     dt = user_setup.dt;
     N = user_setup.N;
     x = user_setup.x;
+    coefs = user_setup.poly_coefs_y;
+
+
     //RHS = [&](const double y,const double t,const double x){return user_setup.RHS(y, t, x);};
-    RHS = [&](const double y,const double t,const double x){return 2;}; // Todo fix RHS and delete this line
+    RHS = [&]( const double y,const double t,const double x){return user_setup.RHS( coefs, y, t, x);};
     y_short_term = E::ArrayXd(1);
     sampling_frequency = user_setup.sampling_frequency;
 
@@ -57,7 +60,7 @@ void ODE::DocumentYShortTerm() {
 
 
 void ODE::UpdateYShortTerm(double y_new){
-    std::cout << "\nmade it to update YST. Method length: "<< method_length << "y_new: " << y_new <<std::endl;
+    std::cout << "\nmade it to update YST. Method length: "<< method_length << "; y_new: " << y_new <<std::endl;
     if (method_length == 1) {
         y_short_term(0) = y_new;
     }

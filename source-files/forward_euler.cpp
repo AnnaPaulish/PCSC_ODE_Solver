@@ -10,7 +10,9 @@
 ForwardEuler::ForwardEuler(SetUp user_setup) : ODE (user_setup) {y_short_term.resize(method_length);};
 
 double ForwardEuler::OneStepFE(double t) {//TODO variable name t shadows name in setup
-    std::cout << "RHS in FE" << this->RHS(y_short_term(0), t - dt, x)<<std::flush;
+
+    //std::cout << "coefs = " << this->
+    std::cout << "RHS in FE" << this->RHS( 2, 2, 2)<<std::endl;
     return y_short_term(0) + dt * this->RHS(y_short_term(0), t - dt, x);
 }
 
