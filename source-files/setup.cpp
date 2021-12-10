@@ -6,6 +6,7 @@
 SetUp::SetUp() {
     read_settings();
     make_t();
+    std::cout<<"coefs = "<<poly_coefs_y;
 }
 void SetUp::read_file(std::string settings_file_name) {
     std::ifstream read_file("set.txt");
@@ -15,19 +16,23 @@ void SetUp::read_file(std::string settings_file_name) {
     read_file >> method;
     read_file >> t_0;
     read_file >> y_0;
+
     read_file >> N;
 
     read_file >> dt;
     read_file >> sampling_frequency;
     read_file >> polynomial_degree;
 
-    solution_size = int(std::floor(N / sampling_frequency)) + 1;
+    solution_size = int(std::floor((N+1)/sampling_frequency)) + 1;
 
     t.resize(solution_size);
     y.resize(solution_size);
-    y[0] = y_0;
 
-    poly_coefs_y.resize(polynomial_degree+1);
+    y[0]=y_0;
+    t[0]=t_0;
+
+    poly_coefs_y = E::ArrayXd::Ones(polynomial_degree + 1);
+
     for (int i=0; i<(polynomial_degree + 1); i++){
         read_file >> poly_coefs_y[i];
     }
@@ -94,18 +99,19 @@ void SetUp::read_settings() {
     }
 }
 
-double SetUp::RHS(const double y_value, const double t_value = 0, const double x_value = 0) {//Todo maybe remove these defaulst, could cause future bugs
+double SetUp::RHS(E::ArrayXd coefs, const double y_value, const double t_value = 0, const double x_value = 0) {//Todo maybe remove these defaulst, could cause future bugs
 
-    double rhs = poly_coefs_y[0];
-    std::cout << " in RHS" << poly_coefs_y<< std::flush;
-    for (int i=1; i<(polynomial_degree + 1); i++){
-        rhs += pow(y_value, i) * poly_coefs_y[i];
+    double rhs = coefs[0];
+    for (int i=1; i<(coefs.size()); i++){
+        rhs += pow(y_value, i) * coefs[i];
     }
+    std::cout << "rhs = " << rhs << std::endl;
     return rhs;
 }
 void SetUp::make_t() {
 
     t[0] = t_0;
+
     for (int i=1; i<(solution_size); i++){
         t[i] = i * sampling_frequency * dt;
     }

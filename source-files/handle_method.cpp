@@ -37,3 +37,4 @@ ODE* MakeMethod(SetUp user_setup){//Todo where and how do we delete the instance
 }
 
 void RemoveMethod(ODE* ode_pointr) {delete ode_pointr;}
+

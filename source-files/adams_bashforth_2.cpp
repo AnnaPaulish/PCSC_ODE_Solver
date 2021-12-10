@@ -15,7 +15,7 @@ void AdamsBashforth_2::InitializeYShortTermAB2() {
 double AdamsBashforth_2::OneStepAB2(double t) {
     // Calculating the individual components of the gradient estimation
     auto term_1 = 3 / 2 * RHS(y_short_term(1), t - dt, x);
-    auto term_2 = - 1 / 2 * RHS(y_short_term(0), t - 2 * dt, x);
+    auto term_2 = - 1 / 2 * RHS( y_short_term(0), t - 2 * dt, x);
 
     return y_short_term(1) + dt * (term_1 + term_2);
 }

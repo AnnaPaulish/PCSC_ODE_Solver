@@ -15,10 +15,10 @@ void AdamsBashforth_4::InitializeYShortTermAB4() {
 
 double AdamsBashforth_4::OneStepAB4(double t) {
     // Calculating the individual components of the gradient estimation
-    auto term_1 = 55 / 24 * RHS(y_short_term(3), t - dt, x);
-    auto term_2 = - 59 / 24 * RHS(y_short_term(2), t - 2 * dt, x);
-    auto term_3 = 37 / 24 * RHS(y_short_term(1), t - 3 * dt, x);
-    auto term_4 = - 9 / 24 * RHS(y_short_term(0), t - 4 * dt, x);
+    auto term_1 = 55 / 24 * RHS( y_short_term(3), t - dt, x);
+    auto term_2 = - 59 / 24 * RHS( y_short_term(2), t - 2 * dt, x);
+    auto term_3 = 37 / 24 * RHS( y_short_term(1), t - 3 * dt, x);
+    auto term_4 = - 9 / 24 * RHS( y_short_term(0), t - 4 * dt, x);
 
     return y_short_term(3) + dt * (term_1 + term_2 + term_3 + term_4);
 }

@@ -12,14 +12,14 @@ public:
     int N = 5; // total number of steps N
     double dt = 0.1; // time step dt
     double x = 0;
-
-    E::ArrayXd t = E::ArrayXd::LinSpaced(N+1, 0, N*dt);// todo adjust for the sampling frequency
-    E::ArrayXd y = E::ArrayXd::Ones(N);
-
     int polynomial_degree = 1; //
-    E::ArrayXd poly_coefs_y = E::ArrayXd::Ones(polynomial_degree+1);
+    E::ArrayXd poly_coefs_y;
+
 
     int sampling_frequency = 2;
+
+    E::ArrayXd t = E::ArrayXd::LinSpaced(solution_size, 0, solution_size*dt);// todo adjust for the sampling frequency
+    E::ArrayXd y = E::ArrayXd::Ones(solution_size);
 
     std::string output_path; // Output File Path: path/my_output.dat
     bool console_output; // True if we want to get the result in Console
@@ -31,14 +31,17 @@ public:
     void read_settings();
     void read_file(std::string settings_file_name);
     void read_console();
-    double RHS(const double y_value, const double t_value, const double x_value);
+
+    double RHS(E::ArrayXd coefs, const double y_value, const double t_value, const double x_value);
 
 private:
     double t_0; // initial time
     double y_0; // initial y value
     int solution_size;
 
+
     void make_t();
+
 
 };
 
