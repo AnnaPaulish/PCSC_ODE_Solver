@@ -22,11 +22,11 @@ protected:
     double x;
     int N;
     int method_length;
-    E::ArrayXd y_short_term; // Static size is applicable as it is dependent on the method and does not change
-    E::ArrayXd *y;
+    E::ArrayXd y_short_term;
+    E::ArrayXd* y;
     E::ArrayXd t;
 
-    double RHS;
+    double (SetUp::*RHS)(const double,const double,const double);
     virtual void InitializeYShortTerm();
     virtual double OneStep(double t) = 0;
 
