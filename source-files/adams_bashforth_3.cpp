@@ -6,7 +6,7 @@
 #include "adams_bashforth_2.h"
 #include "setup.h"
 
-AdamsBashforth_3::AdamsBashforth_3(SetUp user_setup) : Adams_Bashforth_2 (SetUp user_setup) {};
+AdamsBashforth_3::AdamsBashforth_3(SetUp user_setup) : AdamsBashforth_2 (user_setup) {};
 
 void AdamsBashforth_3::InitializeYShortTermAB3() {
     InitializeYShortTermAB2()

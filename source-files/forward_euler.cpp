@@ -12,7 +12,7 @@ double ForwardEuler::OneStepFE(double t) {
 }
 
 double ForwardEuler::OneStep(double t) {
-    return this->(OneStepFE(t))
+    return this->OneStepFE(t);
 }
 
 // double ForwardEuler::OneStep = &ForwardEuler::OneStepFE;

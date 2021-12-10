@@ -33,7 +33,7 @@ public:
     void read_command_line();
     void read_file(std::string settings_file_name);
     void read_console();
-    double RHS(double y_value, double t_value, double x_value);
+    double RHS(const double y_value, const double t_value, const double x_value);
 
 private:
     double t_0; // initial time
@@ -42,10 +42,6 @@ private:
     void make_t();
 
 };
-
-
-
-#endif //ODE_SOLVER_PROJECT_SETUP_H
 
 
 

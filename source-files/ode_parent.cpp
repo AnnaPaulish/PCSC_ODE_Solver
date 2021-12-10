@@ -26,7 +26,7 @@ void ODE::Solve() {
     }
 
     DocumentYShortTerm();
-    double y_new = 0;
+    double y_new;
     for (int iteration = method_length; iteration <= N; iteration++) {
         y_new = OneStep(iteration * dt + t_0);
 
