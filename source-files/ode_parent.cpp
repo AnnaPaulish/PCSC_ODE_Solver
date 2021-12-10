@@ -4,7 +4,7 @@
 
 #include "iostream"
 
-ODE::ODE(SetUp user_setup) {
+ODE::ODE(SetUp &user_setup) {
 
     // Declaring all the members
     t = user_setup.t;
@@ -22,7 +22,7 @@ ODE::ODE(SetUp user_setup) {
     y_short_term(0) = user_setup.y[0];
 }
 
-E::ArrayXd ODE::Solve(SetUp &user_setup) {
+E::ArrayXd ODE::Solve() {
 
     method_length = GetMethodLength();
     if (method_length != 1) {

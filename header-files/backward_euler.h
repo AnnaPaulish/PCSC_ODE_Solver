@@ -11,7 +11,7 @@
 class BackwardEuler: public ODE {
 
 public:
-    BackwardEuler(SetUp user_setup);
+    BackwardEuler(SetUp &user_setup);
 
 protected:
     int method_length = 1;

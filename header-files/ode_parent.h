@@ -13,8 +13,8 @@ namespace E = Eigen;
 class ODE{
 
 public:
-    explicit ODE(SetUp user_setup);
-    E::ArrayXd Solve(SetUp &user_setup);
+    explicit ODE(SetUp &user_setup);
+    E::ArrayXd Solve();
 
     virtual ~ODE(){};
 

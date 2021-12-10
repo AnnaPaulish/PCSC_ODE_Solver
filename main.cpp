@@ -11,7 +11,7 @@ int main (int argc, char **argv) {
 
     auto ode = MakeMethod(user_setup);
 
-    auto solution = ode->Solve(user_setup);
+    auto solution = ode->Solve();
 
     auto output = Output(user_setup, solution);
     output.write();

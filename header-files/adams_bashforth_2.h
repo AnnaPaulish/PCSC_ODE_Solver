@@ -11,7 +11,7 @@
 class AdamsBashforth_2: public ForwardEuler {
 
 public:
-    AdamsBashforth_2(SetUp user_setup);
+    AdamsBashforth_2(SetUp &user_setup);
 
 protected:
     int method_length = 2;

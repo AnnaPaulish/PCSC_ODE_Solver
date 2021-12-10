@@ -9,7 +9,7 @@
 class RungeKutta: public ODE {
 
 public:
-    RungeKutta(SetUp user_setup);
+    RungeKutta(SetUp &user_setup);
 
 protected:
     int method_length = 1;

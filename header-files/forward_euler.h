@@ -13,7 +13,7 @@
 class ForwardEuler: public ODE {
 
 public:
-    ForwardEuler(SetUp user_setup);
+    ForwardEuler(SetUp &user_setup);
 
 protected:
     int method_length = 1;

@@ -11,7 +11,7 @@
 class AdamsBashforth_4: public AdamsBashforth_3 {
 
 public:
-    AdamsBashforth_4(SetUp user_setup);
+    AdamsBashforth_4(SetUp &user_setup);
 
 protected:
     const int method_length = 4;
