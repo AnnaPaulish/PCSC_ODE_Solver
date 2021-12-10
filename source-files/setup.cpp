@@ -6,7 +6,6 @@
 SetUp::SetUp() {
     read_settings();
     make_t();
-    std::cout<<"coefs = "<<poly_coefs_y;
 }
 void SetUp::read_file(std::string settings_file_name) {
     std::ifstream read_file("set.txt");
@@ -105,7 +104,6 @@ double SetUp::RHS(E::ArrayXd coefs, const double y_value, const double t_value =
     for (int i=1; i<(coefs.size()); i++){
         rhs += pow(y_value, i) * coefs[i];
     }
-    std::cout << "rhs = " << rhs << std::endl;
     return rhs;
 }
 void SetUp::make_t() {

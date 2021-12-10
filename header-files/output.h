@@ -9,14 +9,14 @@ namespace E = Eigen;
 class Output {
 public:
     // Constructor and destructor
-    Output(SetUp user_setup);
+    Output(SetUp user_setup, E::ArrayXd solution);
     void write();
 
 private:
     bool console_output;
     std::string output_path;
-    E::ArrayXd *y;
-    E::ArrayXd *t;
+    E::ArrayXd y;
+    E::ArrayXd t;
 
     void write_file(std::string path);
     void write_to_screen();

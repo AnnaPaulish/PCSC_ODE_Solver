@@ -14,7 +14,7 @@ class ODE{
 
 public:
     explicit ODE(SetUp user_setup);
-    void Solve();
+    E::ArrayXd Solve(SetUp &user_setup);
 
     virtual ~ODE(){};
 
@@ -26,7 +26,7 @@ protected:
     int method_length;
     E::ArrayXd y_short_term;
     E::ArrayXd coefs;
-    E::ArrayXd &y;
+    E::ArrayXd y;
     E::ArrayXd t;
 
     std::function<double ( const double,const double,const double)> RHS;

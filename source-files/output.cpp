@@ -5,12 +5,12 @@
 #include "output.h"
 #include "setup.h"
 
-Output::Output(SetUp user_setup) {
+Output::Output(SetUp user_setup, E::ArrayXd solution) {
 
     console_output = user_setup.console_output;
     output_path = user_setup.output_path;
-    t = &user_setup.t;
-    y = &user_setup.y;
+    t = user_setup.t;
+    y = solution;
 }
 
 void Output::write() {
@@ -36,8 +36,8 @@ void Output::write_file(std::string path){
     output_file.setf(std::ios::scientific);
     output_file.setf(std::ios::showpos);
 
-    for (int i = 0; i < y->size(); i++){
-        output_file << t[0][i] << " " << y[0][i] << std::endl;
+    for (int i = 0; i < y.size(); i++){
+        output_file << t[i] << " " << y[i] << std::endl;
     }
 
     output_file << 1 << " " << 2 << std::endl;
@@ -55,7 +55,7 @@ void Output::write_to_screen() {
     std::cout << "Solution of ODE: \n";
     std::cout << "Time" << "\t\t\ty-value\n";
 
-    for (int i = 0; i < y->size(); i++){
-        std::cout << t[0][i] << "\t\t" << y[0][i] << std::endl;
+    for (int i = 0; i < y.size(); i++){
+        std::cout << t[i] << "\t\t" << y[i] << std::endl;
     }
 }

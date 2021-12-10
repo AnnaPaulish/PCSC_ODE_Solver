@@ -9,16 +9,12 @@ ODE::ODE(SetUp user_setup) {
     // Declaring all the members
     t = user_setup.t;
     t_0 = t[0];
-    auto &y = user_setup.y;
-    y[0] = 13;
-    std::cout << y<<" y0\n"<<std::flush;
+    y = user_setup.y;
     dt = user_setup.dt;
     N = user_setup.N;
     x = user_setup.x;
     coefs = user_setup.poly_coefs_y;
 
-
-    //RHS = [&](const double y,const double t,const double x){return user_setup.RHS(y, t, x);};
     RHS = [&]( const double y,const double t,const double x){return user_setup.RHS( coefs, y, t, x);};
     y_short_term = E::ArrayXd(1);
     sampling_frequency = user_setup.sampling_frequency;
@@ -27,8 +23,8 @@ ODE::ODE(SetUp user_setup) {
     y_short_term(0) = user_setup.y[0];
 }
 
-void ODE::Solve() {
-    std::cout <<y.size()<< "ysize\n"<<std::flush;
+E::ArrayXd ODE::Solve(SetUp &user_setup) {
+
     method_length = GetMethodLength();
     if (method_length != 1) {
         InitializeYShortTerm();
@@ -40,14 +36,13 @@ void ODE::Solve() {
     for (int iteration = method_length; iteration <= N; iteration++) {
         y_new = OneStep(iteration * dt + t_0);
 
-        if ((iteration + 1) % sampling_frequency == 0) {
-            std::cout <<y.size()<< "index\n"<<std::flush;
-            y[(iteration + 1) / sampling_frequency] = y_new;
+        if ((iteration) % sampling_frequency == 0) {
+            y[(iteration) / sampling_frequency] = y_new;
         }
 
         UpdateYShortTerm(y_new);
     }
-    std::cout << "y"<< y <<"\n"<< std::flush;
+    return y;
 }
 
 void ODE::DocumentYShortTerm() {
