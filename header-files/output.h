@@ -10,11 +10,13 @@ class Output {
 public:
     // Constructor and destructor
     Output(SetUp user_setup);
+    void write();
 
 private:
     bool console_output;
-    E::ArrayXd y;
-    E::ArrayXd t;
+    std::string output_path;
+    E::ArrayXd *y;
+    E::ArrayXd *t;
 
     void write_file(std::string path);
     void write_to_screen();

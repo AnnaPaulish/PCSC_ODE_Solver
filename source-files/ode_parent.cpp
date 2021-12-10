@@ -9,7 +9,9 @@ ODE::ODE(SetUp user_setup) {
     // Declaring all the members
     t = user_setup.t;
     t_0 = t[0];
-    y = user_setup.y;
+    auto &y = user_setup.y;
+    y[0] = 13;
+    std::cout << y<<" y0\n"<<std::flush;
     dt = user_setup.dt;
     N = user_setup.N;
     x = user_setup.x;
@@ -23,32 +25,34 @@ ODE::ODE(SetUp user_setup) {
 }
 
 void ODE::Solve() {
-    std::cout << y_short_term;
+    std::cout <<y.size()<< "ysize\n"<<std::flush;
     method_length = GetMethodLength();
     if (method_length != 1) {
         InitializeYShortTerm();
     }
-    std::cout << "initialized with y_ST: " << y_short_term << std::endl;
+    std::cout << "before YSTdocumentaion\n";
     DocumentYShortTerm();
+    std::cout << "after YST documentaion\n"<<std::flush;
     double y_new;
     for (int iteration = method_length; iteration <= N; iteration++) {
         y_new = OneStep(iteration * dt + t_0);
-        UpdateYShortTerm(y_new);
 
-        if (iteration % sampling_frequency == 0) {
-            y[iteration / sampling_frequency] = y_new;
+        if ((iteration + 1) % sampling_frequency == 0) {
+            std::cout <<y.size()<< "index\n"<<std::flush;
+            y[(iteration + 1) / sampling_frequency] = y_new;
         }
 
+        UpdateYShortTerm(y_new);
     }
-
+    std::cout << "y"<< y <<"\n"<< std::flush;
 }
 
 void ODE::DocumentYShortTerm() {
 
     if (sampling_frequency < method_length) {
         for (int init_count = 1; init_count < method_length; init_count++) {
-            if (init_count % sampling_frequency) {
-                y(init_count / sampling_frequency) = y_short_term(init_count);
+            if (init_count % sampling_frequency == 0) {
+                y[init_count / sampling_frequency] = y_short_term(init_count);
             }
         }
     }
@@ -57,7 +61,7 @@ void ODE::DocumentYShortTerm() {
 
 
 void ODE::UpdateYShortTerm(double y_new){
-    std::cout << "\nmade it to update YST. Method length: "<< method_length << "y_new: " << y_new <<std::endl;
+    std::cout << "\nmade it to update YST. Method length: "<< method_length << " y_new: " << y_new <<std::endl;
     if (method_length == 1) {
         y_short_term(0) = y_new;
     }

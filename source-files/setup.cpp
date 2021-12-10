@@ -16,12 +16,16 @@ void SetUp::read_file(std::string settings_file_name) {
     read_file >> t_0;
     read_file >> y_0;
     read_file >> N;
-    t.resize(N+1);//#TODO this is wrong I think as we only sample entries every sampling_frequency
-    y.resize(N); //#TODO this is wrong I think as we only sample entries every sampling_frequency
-//TODO where do you set y[0] = y_0?
+
     read_file >> dt;
     read_file >> sampling_frequency;
     read_file >> polynomial_degree;
+
+    solution_size = int(std::floor(N / sampling_frequency)) + 1;
+
+    t.resize(solution_size);
+    y.resize(solution_size);
+    y[0] = y_0;
 
     poly_coefs_y.resize(polynomial_degree+1);
     for (int i=0; i<(polynomial_degree + 1); i++){
@@ -32,7 +36,6 @@ void SetUp::read_file(std::string settings_file_name) {
     read_file >> output_path;
     read_file >> testing;
     read_file.close();
-
 }
 void SetUp::read_console() {
     char answer_test;
@@ -93,9 +96,9 @@ void SetUp::read_settings() {
 
 double SetUp::RHS(const double y_value, const double t_value = 0, const double x_value = 0) {//Todo maybe remove these defaulst, could cause future bugs
 
-    double rhs = 0;
+    double rhs = poly_coefs_y[0];
     std::cout << " in RHS" << poly_coefs_y<< std::flush;
-    for (int i=0; i<(polynomial_degree + 1); i++){
+    for (int i=1; i<(polynomial_degree + 1); i++){
         rhs += pow(y_value, i) * poly_coefs_y[i];
     }
     return rhs;
@@ -103,8 +106,8 @@ double SetUp::RHS(const double y_value, const double t_value = 0, const double x
 void SetUp::make_t() {
 
     t[0] = t_0;
-    for (int i=0; i<(N); i++){
-        t[i+1] = (i+1)*dt;
+    for (int i=1; i<(solution_size); i++){
+        t[i] = i * sampling_frequency * dt;
     }
-    std::cout << "finished" << std::endl;
+    std::cout << "finished setup" << std::endl;
 }

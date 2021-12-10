@@ -3,7 +3,7 @@
 //
 #include "setup.h"
 #include "output.h"
-#include "make_method.h"
+#include "handle_method.h"
 
 #include "iostream"
 
@@ -21,6 +21,9 @@ int main (int argc, char **argv) {
     std::cout << "solved ode" << std::endl;
 
     auto output = Output(user_setup);
+    output.write();
+
+    std::cout << "done with output";
 
     RemoveMethod(ode);
 

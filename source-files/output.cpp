@@ -5,43 +5,57 @@
 #include "output.h"
 #include "setup.h"
 
-Output::Output(SetUp user_setup) {//todo t is never used - what is the format of the output file?
+Output::Output(SetUp user_setup) {
+
     console_output = user_setup.console_output;
-    t = user_setup.t;
-    y = user_setup.y;
-    if (console_output){// todo what if you want to both save the output and print it to the screen
+    output_path = user_setup.output_path;
+    t = &user_setup.t;
+    y = &user_setup.y;
+}
+
+void Output::write() {
+
+    if (console_output){
         write_to_screen();
     }
-    else{
-        write_file(user_setup.output_path);
-    }
 
+    if (output_path != "None"){
+        write_file(output_path);
+    }
 }
 
 void Output::write_file(std::string path){
+
     std::ofstream output_file(path);
     // Check that file is properly opened.
     if (!output_file.is_open()) {
         std::cout << "Error opening output file." << std::endl;
     }
+
+    output_file.precision(4);
     output_file.setf(std::ios::scientific);
     output_file.setf(std::ios::showpos);
-    output_file.precision(2);
-    // Write x vector ending with a new line
-    for (int i = 0; i < 4; ++i) {
-        output_file << y[i] << " ";
+
+    for (int i = 0; i < y->size(); i++){
+        output_file << t[0][i] << " " << y[0][i] << std::endl;
     }
-    output_file << "\n";
-    // Flush after writing vector y
+
+    output_file << 1 << " " << 2 << std::endl;
+
     output_file.flush();
     output_file.close();
-
-
 }
-void Output::write_to_screen() {
-    std::cout << "Solution of ODE: \n";
-    for (int i=0;i<=y.size();i++){
-        std::cout << "y["<<i<<"] = "<<y[i]<<std::endl;
-    }
 
+void Output::write_to_screen() {
+
+    std::cout << std::scientific;
+    std::cout << std::showpos;
+    std::cout << std::setprecision(4);
+
+    std::cout << "Solution of ODE: \n";
+    std::cout << "Time" << "\t\t\ty-value\n";
+
+    for (int i = 0; i < y->size(); i++){
+        std::cout << t[0][i] << "\t\t" << y[0][i] << std::endl;
+    }
 }

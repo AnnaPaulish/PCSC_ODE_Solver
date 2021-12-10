@@ -16,6 +16,8 @@ public:
     explicit ODE(SetUp user_setup);
     void Solve();
 
+    virtual ~ODE(){};
+
 protected:
     double dt;
     double t_0;
@@ -23,7 +25,7 @@ protected:
     int N;
     int method_length;
     E::ArrayXd y_short_term;
-    E::ArrayXd y;
+    E::ArrayXd &y;
     E::ArrayXd t;
 
     std::function<double (const double,const double,const double)> RHS;

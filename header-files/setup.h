@@ -36,6 +36,7 @@ public:
 private:
     double t_0; // initial time
     double y_0; // initial y value
+    int solution_size;
 
     void make_t();
 

@@ -10,12 +10,12 @@ BackwardEuler::BackwardEuler(SetUp user_setup) : ODE (user_setup) {y_short_term.
 double BackwardEuler::OneStep(double t) {
     double residual = 1;
     double cut_off = 0.01;
-    double y_next = 0;
 
-    double y = y_short_term(0);
-
+    double original_y = y_short_term(0);
+    double y = original_y;
+    double y_next = y;
     while (residual > cut_off) {
-        y_next = y + dt * RHS(y, t, x);
+        y_next = original_y + dt * RHS(y, t, x);
         residual = abs(y / y_next - 1);
         y = y_next;
     }
