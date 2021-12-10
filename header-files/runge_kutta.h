@@ -16,6 +16,7 @@ protected:
 
     double OneStep(double t);
 
+    int GetMethodLength() {return method_length;};
 };
 
 #endif //ODE_SOLVER_PROJECT_RUNGE_KUTTA_H

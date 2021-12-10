@@ -5,11 +5,11 @@
 #include "output.h"
 #include "setup.h"
 
-Output::Output(SetUp user_setup) {
+Output::Output(SetUp user_setup) {//todo t is never used - what is the format of the output file?
     console_output = user_setup.console_output;
     t = user_setup.t;
     y = user_setup.y;
-    if (console_output){
+    if (console_output){// todo what if you want to both save the output and print it to the screen
         write_to_screen();
     }
     else{
@@ -20,7 +20,7 @@ Output::Output(SetUp user_setup) {
 
 void Output::write_file(std::string path){
     std::ofstream output_file(path);
-    // Check that file is properly openened.
+    // Check that file is properly opened.
     if (!output_file.is_open()) {
         std::cout << "Error opening output file." << std::endl;
     }

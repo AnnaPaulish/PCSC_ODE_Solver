@@ -16,9 +16,9 @@ void SetUp::read_file(std::string settings_file_name) {
     read_file >> t_0;
     read_file >> y_0;
     read_file >> N;
-    t.resize(N+1);
-    y.resize(N);
-
+    t.resize(N+1);//#TODO this is wrong I think as we only sample entries every sampling_frequency
+    y.resize(N); //#TODO this is wrong I think as we only sample entries every sampling_frequency
+//TODO where do you set y[0] = y_0?
     read_file >> dt;
     read_file >> sampling_frequency;
     read_file >> polynomial_degree;
@@ -91,8 +91,10 @@ void SetUp::read_settings() {
     }
 }
 
-double SetUp::RHS(double y_value, double t_value = 0, double x_value = 0) {
+double SetUp::RHS(const double y_value, const double t_value = 0, const double x_value = 0) {//Todo maybe remove these defaulst, could cause future bugs
+
     double rhs = 0;
+    std::cout << " in RHS" << poly_coefs_y<< std::flush;
     for (int i=0; i<(polynomial_degree + 1); i++){
         rhs += pow(y_value, i) * poly_coefs_y[i];
     }
@@ -104,5 +106,5 @@ void SetUp::make_t() {
     for (int i=0; i<(N); i++){
         t[i+1] = (i+1)*dt;
     }
-    std::cout<<"finished";
+    std::cout << "finished" << std::endl;
 }

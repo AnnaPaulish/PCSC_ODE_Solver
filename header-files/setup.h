@@ -11,8 +11,9 @@ public:
 
     int N = 5; // total number of steps N
     double dt = 0.1; // time step dt
+    double x = 0;
 
-    E::ArrayXd t = E::ArrayXd::LinSpaced(N+1, 0, N*dt);
+    E::ArrayXd t = E::ArrayXd::LinSpaced(N+1, 0, N*dt);// todo adjust for the sampling frequency
     E::ArrayXd y = E::ArrayXd::Ones(N);
 
     int polynomial_degree = 1; //
@@ -28,7 +29,6 @@ public:
     bool testing; // True if we want to test
     // methods
     void read_settings();
-    void read_command_line();
     void read_file(std::string settings_file_name);
     void read_console();
     double RHS(const double y_value, const double t_value, const double x_value);
@@ -40,7 +40,5 @@ private:
     void make_t();
 
 };
-
-
 
 #endif //ODE_SOLVER_PROJECT_SETUP_H

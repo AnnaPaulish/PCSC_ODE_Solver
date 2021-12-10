@@ -23,12 +23,13 @@ protected:
     int N;
     int method_length;
     E::ArrayXd y_short_term;
-    E::ArrayXd* y;
+    E::ArrayXd y;
     E::ArrayXd t;
 
     std::function<double (const double,const double,const double)> RHS;
-    virtual void InitializeYShortTerm();
+    virtual void InitializeYShortTerm() {};
     virtual double OneStep(double t) = 0;
+    virtual int GetMethodLength() = 0;
 
 private:
     int sampling_frequency;

@@ -22,6 +22,7 @@ protected:
     double OneStepAB4(double t);
     double OneStep(double t) {return this->OneStepAB4(t);};
 
+    int GetMethodLength() {return method_length;};
 };
 
 #endif //ODE_SOLVER_PROJECT_ADAMS_BASHFORTH_4_H

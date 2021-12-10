@@ -18,6 +18,7 @@ protected:
 
     double OneStep(double t);
 
+    int GetMethodLength() {return method_length;};
 };
 
 #endif //ODE_SOLVER_PROJECT_BACKWARD_EULER_H

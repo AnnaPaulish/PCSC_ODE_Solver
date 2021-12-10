@@ -8,6 +8,8 @@
 #include "ode_parent.h"
 #include "setup.h"
 
+#include "iostream"
+
 class ForwardEuler: public ODE {
 
 public:
@@ -19,6 +21,7 @@ protected:
     double OneStepFE(double t);
     double OneStep(double t) {return this->OneStepFE(t);};
 
+    int GetMethodLength() {return method_length;};
 };
 
 #endif //ODE_SOLVER_PROJECT_FORWARD_EULER_H

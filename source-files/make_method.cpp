@@ -22,17 +22,18 @@ struct MethodError : public std::exception{
     }
 };
 
-ODE* MakeMethod(SetUp user_setup){
+ODE* MakeMethod(SetUp user_setup){//Todo where and how do we delete the instances
     std::string method = user_setup.method;
     ODE* ode_pointr;
     if (method == "ForwardEuler") ode_pointr = new ForwardEuler(user_setup);
-    else if (method == "AdamsBashforth_2") ode_pointr = new ForwardEuler(user_setup);
-    else if (method == "AdamsBashforth_3") ode_pointr = new ForwardEuler(user_setup);
-    else if (method == "AdamsBashforth_4") ode_pointr = new ForwardEuler(user_setup);
-    else if (method == "RungeKutta") ode_pointr = new ForwardEuler(user_setup);
-    else if (method == "BackwardEuler") ode_pointr = new ForwardEuler(user_setup);
+    else if (method == "AdamsBashforth_2") ode_pointr = new AdamsBashforth_2(user_setup);
+    else if (method == "AdamsBashforth_3") ode_pointr = new AdamsBashforth_3(user_setup);
+    else if (method == "AdamsBashforth_4") ode_pointr = new AdamsBashforth_4(user_setup);
+    else if (method == "RungeKutta") ode_pointr = new RungeKutta(user_setup);
+    else if (method == "BackwardEuler") ode_pointr = new BackwardEuler(user_setup);
     else throw MethodError();
 
     return ode_pointr;
-
 }
+
+void RemoveMethod()
