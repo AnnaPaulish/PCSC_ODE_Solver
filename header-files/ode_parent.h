@@ -17,21 +17,21 @@ public:
     void Solve();
 
 protected:
-    const double dt;
-    const double t_0;
-    const double x;
-    const int N;
-    const int method_length;
+    double dt;
+    double t_0;
+    double x;
+    int N;
+    int method_length;
     E::ArrayXd y_short_term; // Static size is applicable as it is dependent on the method and does not change
-    E::ArrayXd & y;
-    const E::ArrayXd & t;
+    E::ArrayXd* y;
+    E::ArrayXd t;
 
-    double RHS;
+    double (SetUp::*RHS)(const double,const double,const double);
     virtual void InitializeYShortTerm();
     virtual double OneStep(double t) = 0;
 
 private:
-    const int sampling_frequency;
+    int sampling_frequency;
 
     void DocumentYShortTerm();
     void UpdateYShortTerm(double y_new);
