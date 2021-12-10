@@ -8,16 +8,6 @@ namespace E = Eigen;
 
 class SetUp {
 public:
-    
-#ifndef ODE_SOLVER_PROJECT_SETUP_H
-#define ODE_SOLVER_PROJECT_SETUP_H
-
-#include "string"
-#include <Eigen/Dense>
-namespace E = Eigen;
-
-class SetUp {
-public:
     SetUp();
 
     int N = 5; // total number of steps N
