@@ -6,38 +6,32 @@
 namespace E = Eigen;
 class SetUp {
 public:
-    // Constructor and destructor
+    // Constructor
     SetUp(std::string settings_path="settings.txt");
 
-    int N = 5; // total number of steps N
-    double dt = 0.1; // time step dt
-    double x = 0;
-    int polynomial_degree = 1; //
-    E::ArrayXd poly_coefs_y;
+    int N; // total number of steps N
+    double dt; // time step dt
+    double x; 
+    int polynomial_degree; // the degree of the polynomial on the right side of the ODE
+    E::ArrayXd poly_coefs_y; //  the coefficients of the polynomial on the right side of the ODE starting from degree zero
+    E::ArrayXd t; // time array 
     double y_0; // initial y value
-    int solution_size;
-    int sampling_frequency = 2;
+    int solution_size; // number of elements in the solution array y
+    int sampling_frequency; // parameter to shorten the output. For example, you can output every third element of the solution (in this case sampling_frequency = 3). Define sampling_frequency = 1 to show the entire solution
 
-    E::ArrayXd t = E::ArrayXd::LinSpaced(solution_size, 0, solution_size*dt);
-
-    std::string output_path; // Output File Path: path/my_output.dat
+    std::string output_path; // Output file name: output.txt
     bool console_output; // True if we want to get the result in Console
     std::string method; // solving method (string without quotation marks)
 
     bool testing; // True if we want to test
-    // methods
-    void read_settings();
+    // method for reading the settings
     void read_file();
-    void read_console();
-
+    // method for calculating the RHS of ODE
     double RHS(E::ArrayXd coefs, const double y_value, const double t_value, const double x_value);
 
 private:
-    double t_0; // initial time
-    std::string settings_file_name;
-    void make_t();
-
-
+    double t_0; // initial time value
+    std::string settings_file_name; // the name of the input file with the initial parameters of ODE
 };
 
 #endif //ODE_SOLVER_PROJECT_SETUP_H
