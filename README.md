@@ -37,7 +37,7 @@ The default settings correspond to:
 - `testing` - an integer variable which indicates whether to test the program: 0 - no testing (by default), 1 - the code will be tested.
 
 ## Solution
-After executing the program, the solution of the ordinary differential equation will be written to the file specified in the `user_settings.txt` by the user or in the `Output.txt` by the default.
+After executing the program, the solution of the ordinary differential equation will be written to the file specified in the `settings.txt` by the user or in the `Output.txt` by the default.
 
 # How to run the code
 ## Requirements
