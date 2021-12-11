@@ -9,21 +9,21 @@ ODE::ODE(SetUp &user_setup) {
     // Declaring all the members
     t = user_setup.t;
     t_0 = t[0];
-    y = user_setup.y;
+    y_0 = user_setup.y_0;
     dt = user_setup.dt;
     N = user_setup.N;
     x = user_setup.x;
     coefs = user_setup.poly_coefs_y;
-
-    RHS = [&]( const double y,const double t,const double x){return user_setup.RHS( coefs, y, t, x);};
+    y = E::ArrayXd(user_setup.solution_size);
     sampling_frequency = user_setup.sampling_frequency;
 
+    RHS = [&]( const double y,const double t,const double x){return user_setup.RHS( coefs, y, t, x);};
+
     y_short_term = E::ArrayXd(1);
-    y_short_term(0) = user_setup.y[0];
+    y_short_term(0) = y_0;
 }
 
-E::ArrayXd ODE::Solve() {
-
+E::ArrayXd &ODE::Solve() {
     method_length = GetMethodLength();
     if (method_length != 1) {
         InitializeYShortTerm();

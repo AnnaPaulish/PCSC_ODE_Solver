@@ -22,7 +22,7 @@ struct MethodError : public std::exception{
     }
 };
 
-ODE* MakeMethod(SetUp user_setup){//Todo where and how do we delete the instances
+ODE* MakeMethod(SetUp user_setup){
     std::string method = user_setup.method;
     ODE* ode_pointr;
     if (method == "ForwardEuler") ode_pointr = new ForwardEuler(user_setup);

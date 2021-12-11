@@ -9,7 +9,7 @@ namespace E = Eigen;
 class Output {
 public:
     // Constructor and destructor
-    Output(SetUp user_setup, E::ArrayXd solution);
+    Output(SetUp user_setup, E::ArrayXd& solution);
     void write();
 
 private:

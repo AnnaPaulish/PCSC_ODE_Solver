@@ -14,16 +14,14 @@ public:
     double x = 0;
     int polynomial_degree = 1; //
     E::ArrayXd poly_coefs_y;
-
-
+    double y_0; // initial y value
+    int solution_size;
     int sampling_frequency = 2;
 
-    E::ArrayXd t = E::ArrayXd::LinSpaced(solution_size, 0, solution_size*dt);// todo adjust for the sampling frequency
-    E::ArrayXd y = E::ArrayXd::Ones(solution_size);
+    E::ArrayXd t = E::ArrayXd::LinSpaced(solution_size, 0, solution_size*dt);
 
     std::string output_path; // Output File Path: path/my_output.dat
     bool console_output; // True if we want to get the result in Console
-    //bool console_input;
     std::string method; // solving method (string without quotation marks)
 
     bool testing; // True if we want to test
@@ -36,9 +34,6 @@ public:
 
 private:
     double t_0; // initial time
-    double y_0; // initial y value
-    int solution_size;
-
 
     void make_t();
 

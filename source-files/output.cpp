@@ -5,7 +5,7 @@
 #include "output.h"
 #include "setup.h"
 
-Output::Output(SetUp user_setup, E::ArrayXd solution) {
+Output::Output(SetUp user_setup, E::ArrayXd& solution) {
 
     console_output = user_setup.console_output;
     output_path = user_setup.output_path;

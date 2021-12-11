@@ -25,9 +25,7 @@ void SetUp::read_file(std::string settings_file_name) {
     solution_size = int(std::floor((N+1)/sampling_frequency)) + 1;
 
     t.resize(solution_size);
-    y.resize(solution_size);
 
-    y[0]=y_0;
     t[0]=t_0;
 
     poly_coefs_y = E::ArrayXd::Ones(polynomial_degree + 1);
@@ -87,7 +85,7 @@ void SetUp::read_console() {
 
 }
 void SetUp::read_settings() {
-    std::string settings_file_name = "set.txt"; // TODO: read from CL or console
+    std::string settings_file_name = "set.txt";
     if (settings_file_name == ""){
         std::cout<<"reading console...\n";
         read_console();
@@ -98,7 +96,7 @@ void SetUp::read_settings() {
     }
 }
 
-double SetUp::RHS(E::ArrayXd coefs, const double y_value, const double t_value = 0, const double x_value = 0) {//Todo maybe remove these defaulst, could cause future bugs
+double SetUp::RHS(E::ArrayXd coefs, const double y_value, const double t_value, const double x_value) {
 
     double rhs = coefs[0];
     for (int i=1; i<(coefs.size()); i++){
