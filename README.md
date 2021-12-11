@@ -17,7 +17,7 @@ We consider the following numerical methods:
 - `header-files\` folder contains all header files
 - `sourse-files\` folder contains all source files
 - `user_settings.txt` file contains all initial parameters of ODE
-- `output.txt` file contains the solution of the ODE фfter running the program
+- `output.txt` file contains the solution of the ODE after running the program
 
 ## Input parameters
 In order to solve an ordinary differential equation, you need to determine all the initial parameters using `user_settings.txt` file with the following values:
@@ -29,7 +29,7 @@ ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, Ada
 - `dt` - a double variable for the time step size: 0.01 as a default
 - `sampling_frequency` - an integer variable sampling frequency: 2 as a default
 - `polynomial_degree` - an integer variable for the degree of the polynomial on the right side of the equation: 1 as a default
-- `poly_coefs` - integers separated by spaces for the coefficients of the polynomial on the right side of the equation (starting from degree zero): 1 1 1 as a default. <br/>
+- `poly_coefs` - integers separated by spaces for the coefficients of the polynomial on the right side of the equation starting from degree zero: 1 1 1 as a default. <br/>
 The default settings correspond to: 
 ![equation](https://latex.codecogs.com/gif.latex?\inline&space;f(y,t,x)&space;=&space;1\cdot&space;y^{0}&plus;1\cdot&space;y^{1}&plus;1&space;\cdot&space;y^{2})
 - ``
