@@ -21,6 +21,8 @@ Time step dt (float): 0.01
 
 Sampling frequency (integer): 1
 
+The degree of the polynomial on the right side of the equation: 1
+
 Y Polynomial Coefficients (integers separated by commas): 1, 0, 4
 
 Command Line Output (Boolean): True
