@@ -16,11 +16,11 @@ We consider the following numerical methods:
 - `CMakeLists.txt`: the main executable file is main.cpp
 - `header-files\` folder contains all header files
 - `sourse-files\` folder contains all source files
-- `user_settings.txt` file contains all initial parameters of ODE
+- `settings.txt` file contains all initial parameters of ODE
 - `output.txt` file contains the solution of the ODE after running the program
 
 ## Input parameters
-In order to solve an ordinary differential equation, you need to determine all the initial parameters using `user_settings.txt` file with the following values:
+In order to solve an ordinary differential equation, you need to determine all the initial parameters using `settings.txt` file with the following values:
 - `method_name` - a string variable without quotation marks contains the name of method. You have several options to define it:
 ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, AdamsBashforth_4, RungeKutta or BackwardEuler.
 - `t_0` - a double variable for initial time: 0.0 as a default
