@@ -12,12 +12,14 @@ We consider the following numerical methods:
 
 
 # The code structure
-- `CMakeLists.txt`: the main executable file is main.cpp. 
-- `header-files\` folder contains all header files.
-- `sourse-files\` folder contains all source files.
+- `CMakeLists.txt`: the main executable file is main.cpp
+- `header-files\` folder contains all header files
+- `sourse-files\` folder contains all source files
+- `user_settings.txt` file contains all initial parameters of ODE
+- `output.txt` file contains the solution of the ODE
 
-## Input
-In order to solve an ordinary differential equation, you need to determine all the initial parameters using `set.txt` file with the following values:
+## Input parameters
+In order to solve an ordinary differential equation, you need to determine all the initial parameters using `user_settings.txt` file with the following values:
 - `method_name` - a string variable without quotation marks contains the name of method. You have several options to define it:
 ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, AdamsBashforth_4, RungeKutta or BackwardEuler.
 - `t_0` - a double variable for initial time: 0.0 as a default
@@ -26,7 +28,8 @@ ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, Ada
 - `dt` - a double variable for the time step size: 0.01 as a default
 - `sampling_frequency` - an integer variable sampling frequency: 1 as a default
 - `polynomial_degree` - an integer variable for the degree of the polynomial on the right side of the equation: 1 as a default
-- `poly_coefs` - integers separated by spaces for the coefficients of the polynomial on the right side of the equation (starting from degree zero): 1 1 as a default == 1*y^0 + 1*y^1
+- `poly_coefs` - integers separated by spaces for the coefficients of the polynomial on the right side of the equation (starting from degree zero): 1 1 as a default == 
+$$\mathbf{1*y^0 + 1*y^1}$$
 
 
 ## Solution
