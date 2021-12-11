@@ -20,11 +20,13 @@ We consider the following numerical methods:
 In order to solve an ordinary differential equation, you need to determine all the initial parameters using `set.txt` file with the following values:
 - `method_name` - a string variable without quotation marks contains the name of method. You have several options to define it:
 ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, AdamsBashforth_4, RungeKutta or BackwardEuler.
-- `t_0` - a double variable for initial time (0.0 as a default)
-- `y_0` - a double variable for initial y value (1.0 as a default)
-- `N` - an integer for total number of time steps (10 as a default)
-- `dt` - a double variable for the time step size (0.01 as a default)
-
+- `t_0` - a double variable for initial time: 0.0 as a default
+- `y_0` - a double variable for initial y value: 1.0 as a default
+- `N` - an integer variable for total number of time steps: 10 as a default
+- `dt` - a double variable for the time step size: 0.01 as a default
+- `sampling_frequency` - an integer variable sampling frequency: 1 as a default
+- `polynomial_degree` - an integer variable for the degree of the polynomial on the right side of the equation: 1 as a default
+- `poly_coefs` - integers separated by spaces for the coefficients of the polynomial on the right side of the equation (starting from degree zero): 1 1 as a default == 1*y^0 + 1*y^1
 
 
 ## Solution
