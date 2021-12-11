@@ -40,6 +40,7 @@ The default settings correspond to:
 After executing the program, the solution of the ordinary differential equation will be written to the file specified in the `user_settings.txt` by the user or in the `Output.txt` by the default.
 
 # How to run the code
+## Requirements
 
 # Implementation
 
