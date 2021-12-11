@@ -29,16 +29,20 @@ ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, Ada
 - `dt` - a double variable for the time step size: 0.01 as a default
 - `sampling_frequency` - an integer variable sampling frequency: 2 as a default
 - `polynomial_degree` - an integer variable for the degree of the polynomial on the right side of the equation: 1 as a default
-- `poly_coefs` - integers separated by spaces for the coefficients of the polynomial on the right side of the equation starting from degree zero: 1 1 1 as a default. <br/>
+- `poly_coefs` - integers separated by spaces for the coefficients of the polynomial on the right side of the equation starting from degree zero: 1 2 3 as a default. <br/>
 The default settings correspond to: 
-![equation](https://latex.codecogs.com/gif.latex?\inline&space;f(y,t,x)&space;=&space;1\cdot&space;y^{0}&plus;1\cdot&space;y^{1}&plus;1&space;\cdot&space;y^{2})
-- ``
+![equation](https://latex.codecogs.com/gif.latex?\inline&space;\quad&space;f(y,t,x)&space;=&space;1\cdot&space;y^{0}&plus;2\cdot&space;y^{1}&plus;3&space;\cdot&space;y^{2})
+- `console_output` - an integer variable which indicates whether to output the solution to the console. If equal to 0 - no output in the console, 1 - solution will be printed in the console. Equal to 1 by default.
+- `output_path` - a string variable without quotation marks contains the name of the output file with the solution of ODE. As a default: Output.txt
+- `testing` - an integer variable which indicates whether to test the program: 0 - no testing (by default), 1 - the code will be tested.
 
 ## Solution
+After executing the program, the solution of the ordinary differential equation will be written to the file specified in the `user_settings.txt` by the user or in the `Output.txt` by the default.
 
 # How to run the code
 
 # Implementation
+
 ## Structure of classes 
 
 
