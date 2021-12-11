@@ -27,7 +27,7 @@ ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, Ada
 - `y_0` - a double variable for initial y value: 1.0 as a default
 - `N` - an integer variable for total number of time steps: 10 as a default
 - `dt` - a double variable for the time step size: 0.01 as a default
-- `sampling_frequency` - an integer variable sampling frequency: 2 as a default
+- `sampling_frequency` - an integer variable to shorten the output. For example, you can output every third element of the solution (in this case sampling_frequency = 3). Define sampling_frequency = 1 to show the entire solution: 1 as a default
 - `polynomial_degree` - an integer variable for the degree of the polynomial on the right side of the equation: 1 as a default
 - `poly_coefs` - integers separated by spaces for the coefficients of the polynomial on the right side of the equation starting from degree zero: 1 2 3 as a default. <br/>
 The default settings correspond to: 
