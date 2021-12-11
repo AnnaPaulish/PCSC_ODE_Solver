@@ -3,24 +3,25 @@
 #include <fstream>
 #include "setup.h"
 
-SetUp::SetUp() {
+SetUp::SetUp(std::string settings_path) {
+    settings_file_name = settings_path;
     read_settings();
     make_t();
 }
-void SetUp::read_file(std::string settings_file_name) {
-    std::ifstream read_file("set.txt");
-    if (!read_file.is_open()) {
+void SetUp::read_file() {
+    std::ifstream read_settings(settings_file_name);
+    if (!read_settings.is_open()) {
         std::cout << "Error opening file." << std::endl;
     }
-    read_file >> method;
-    read_file >> t_0;
-    read_file >> y_0;
+    read_settings >> method;
+    read_settings >> t_0;
+    read_settings >> y_0;
 
-    read_file >> N;
+    read_settings >> N;
 
-    read_file >> dt;
-    read_file >> sampling_frequency;
-    read_file >> polynomial_degree;
+    read_settings >> dt;
+    read_settings >> sampling_frequency;
+    read_settings >> polynomial_degree;
 
     solution_size = int(std::floor((N+1)/sampling_frequency)) + 1;
 
@@ -31,13 +32,13 @@ void SetUp::read_file(std::string settings_file_name) {
     poly_coefs_y = E::ArrayXd::Ones(polynomial_degree + 1);
 
     for (int i=0; i<(polynomial_degree + 1); i++){
-        read_file >> poly_coefs_y[i];
+        read_settings >> poly_coefs_y[i];
     }
 
-    read_file >> console_output;
-    read_file >> output_path;
-    read_file >> testing;
-    read_file.close();
+    read_settings >> console_output;
+    read_settings >> output_path;
+    read_settings >> testing;
+    read_settings.close();
 }
 void SetUp::read_console() {
     char answer_test;
@@ -92,7 +93,7 @@ void SetUp::read_settings() {
     }
     else{
         std::cout<<"reading file...\n";
-        read_file(settings_file_name);
+        read_file();
     }
 }
 

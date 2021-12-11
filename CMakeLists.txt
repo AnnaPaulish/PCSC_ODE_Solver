@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(header-files)
 include_directories(source-files)
+add_subdirectory(Google_tests)
 
 include_directories(eigen)
 

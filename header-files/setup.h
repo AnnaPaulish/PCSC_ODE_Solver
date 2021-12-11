@@ -7,7 +7,7 @@ namespace E = Eigen;
 class SetUp {
 public:
     // Constructor and destructor
-    SetUp();
+    SetUp(std::string settings_path="settings.txt");
 
     int N = 5; // total number of steps N
     double dt = 0.1; // time step dt
@@ -27,14 +27,14 @@ public:
     bool testing; // True if we want to test
     // methods
     void read_settings();
-    void read_file(std::string settings_file_name);
+    void read_file();
     void read_console();
 
     double RHS(E::ArrayXd coefs, const double y_value, const double t_value, const double x_value);
 
 private:
     double t_0; // initial time
-
+    std::string settings_file_name;
     void make_t();
 
 
