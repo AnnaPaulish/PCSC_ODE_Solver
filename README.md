@@ -1,5 +1,6 @@
 # PCSC_ODE_Solver
-In this repository we provide implementation of different solvers for the Project 2: "Ordinary Differential Equations" of the class Programming Concepts in Scientific Computing. 
+In this repository we provide implementation of different solvers for the Project 2: "Ordinary Differential Equations" of the class Programming Concepts in Scientific Computing. <br/>
+_Authors: Driever Leonhard Xaver, Anna Paulish_
 
 # Introduction
 This project focuses on implementation of numerical methods for solving ordinary differential equations (ODEs) with a given initial value.
@@ -38,9 +39,12 @@ The default settings correspond to:
 
 ## Solution
 After executing the program, the solution of the ordinary differential equation will be written to the file specified in the `settings.txt` by the user or in the `Output.txt` by the default.
-
+After executing the program, the solution to the ordinary differential equation will be written to the file specified by the user in `settings.txt`: it is `output.txt` by default.
 # How to run the code
+
 ## Requirements
+To run it properly you need:
+- 
 
 # Implementation
 
