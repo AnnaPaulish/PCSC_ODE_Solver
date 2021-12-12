@@ -1,5 +1,5 @@
 # PCSC_ODE_Solver
-In this repository we provide implementation of different solvers for the Project 2: "Ordinary Differential Equations" of the class Programming Concepts in Scientific Computing. <br/>
+In this repository we provide implementation of different solvers for the Project 2: "Ordinary Differential Equations" of the class Programming Concepts in Scientific Computing, MATH-458 <br/>
 _Authors: Driever Leonhard Xaver, Anna Paulish_
 
 # Introduction
