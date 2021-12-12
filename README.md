@@ -34,17 +34,23 @@ ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, Ada
 The default settings correspond to: 
 ![equation](https://latex.codecogs.com/gif.latex?\inline&space;\quad&space;f(y,t,x)&space;=&space;1\cdot&space;y^{0}&plus;2\cdot&space;y^{1}&plus;3&space;\cdot&space;y^{2})
 - `console_output` - an integer variable which indicates whether to output the solution to the console. If equal to 0 - no output in the console, 1 - solution will be printed in the console. Equal to 1 by default.
-- `output_path` - a string variable without quotation marks contains the name of the output file with the solution of ODE. As a default: Output.txt
+- `output_path` - a string variable without quotation marks contains the name of the output file with the solution of ODE. As a default: output.txt
 - `testing` - an integer variable which indicates whether to test the program: 0 - no testing (by default), 1 - the code will be tested.
 
 ## Solution
 After executing the program, the solution of the ordinary differential equation will be written to the file specified in the `settings.txt` by the user or in the `Output.txt` by the default.
 After executing the program, the solution to the ordinary differential equation will be written to the file specified by the user in `settings.txt`: it is `output.txt` by default.
-# How to run the code
+
 
 ## Requirements
 To run it properly you need:
-- 
+- [Eigen library](https://eigen.tuxfamily.org/index.php?title=Main_Page)
+
+## How to run the code
+First clone the repo to your preferred location:
+```git clone https://github.com/ldriever/PCSC_ODE_Solver.git```
+Then make sure that there is a `settings.txt` file in the `cmake-build-debug\` folder that contains all the necessary input parameters.
+
 
 # Implementation
 
