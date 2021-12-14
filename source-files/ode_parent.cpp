@@ -4,7 +4,7 @@
 
 #include "iostream"
 
-ODE::ODE(SetUp &user_setup) {
+ODE::ODE(SetUp &user_setup) {//TODO implement an infinity error
 
     // Declaring all the members
     t = user_setup.t;
@@ -20,10 +20,10 @@ ODE::ODE(SetUp &user_setup) {
     RHS = [&]( const double y,const double t,const double x){return user_setup.RHS( coefs, y, t, x);};
 
     y_short_term = E::ArrayXd(1);
-    y_short_term(0) = y_0;
 }
 
 E::ArrayXd &ODE::Solve() {
+    y_short_term(0) = y_0;
     method_length = GetMethodLength();
     if (method_length != 1) {
         InitializeYShortTerm();

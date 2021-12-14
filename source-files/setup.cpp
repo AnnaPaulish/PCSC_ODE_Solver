@@ -4,7 +4,7 @@
 #include "setup.h"
 
 SetUp::SetUp(std::string settings_path) {
-    settings_file_name = settings_path;
+    settings_file_name = settings_path;// TODO is it possible to always redirect this to the project root directory? Would make it easier for the user
     read_settings();
     make_t();
 }
@@ -37,7 +37,7 @@ void SetUp::read_file() {
 
     read_settings >> console_output;
     read_settings >> output_path;
-    read_settings >> testing;
+    read_settings >> testing; //TODO remove this testing parameter - it is not actually necessary
     read_settings.close();
 }
 void SetUp::read_console() {

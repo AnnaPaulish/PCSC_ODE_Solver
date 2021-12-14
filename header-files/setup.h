@@ -1,10 +1,13 @@
-
 #ifndef ODE_SOLVER_PROJECT_SETUP_H
 #define ODE_SOLVER_PROJECT_SETUP_H
+
 #include "string"
 #include <Eigen/Dense>
+
 namespace E = Eigen;
+
 class SetUp {
+
 public:
     // Constructor and destructor
     SetUp(std::string settings_path="settings.txt");
@@ -36,7 +39,6 @@ private:
     double t_0; // initial time
     std::string settings_file_name;
     void make_t();
-
 
 };
 
