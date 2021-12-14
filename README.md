@@ -47,7 +47,9 @@ To run it properly you need:
 
 # How to run the code
 First clone the repo to your preferred location:
-```git clone https://github.com/ldriever/PCSC_ODE_Solver.git```
+```
+git clone https://github.com/ldriever/PCSC_ODE_Solver.git
+```
 Then make sure that there is a `settings.txt` file in the `cmake-build-debug\` folder that contains all the necessary input parameters.
 
 
