@@ -15,7 +15,7 @@ We consider the following numerical methods:
 # Requirements
 To run it properly you need:
 - [Eigen library](https://eigen.tuxfamily.org/index.php?title=Main_Page)
-- 
+
 # How to run the code
 First clone the repo to your preferred location:
 ```
