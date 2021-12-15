@@ -1,5 +1,6 @@
-#include "test_setup.cpp"
 #include "ode_parent.cpp"
+#include "test_setup.cpp"
+
 
 // We show that our methods can solve an arbitrary ODE with nonlinear solution
 // choosing y' = y + 2y^2 and y_0 = -1 at t=0 has the exact solution: y = exp(t) / (1 - 2*exp(t))
