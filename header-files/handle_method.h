@@ -1,11 +1,12 @@
-//
-// Created by Leonhard Driever on 10.12.21.
-//
 
 #ifndef ODE_SOLVER_PROJECT_HANDLE_METHOD_H
 #define ODE_SOLVER_PROJECT_HANDLE_METHOD_H
 
 #include "ode_parent.h"
+
+/**
+* Retuns a pointer to a child of the ODE class corresponding to a specific solution method 
+*/
 
 ODE* MakeMethod(SetUp user_setup);
 

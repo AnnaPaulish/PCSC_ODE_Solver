@@ -4,6 +4,11 @@
 #include "string"
 #include <Eigen/Dense>
 namespace E = Eigen;
+/**
+* This is a class to 
+*/
+
+
 class SetUp {
 public:
     // Constructor
@@ -24,9 +29,9 @@ public:
     std::string method; // solving method (string without quotation marks)
 
     bool testing; // True if we want to test
-    // method for reading the settings
+    /// method for reading the settings of ODE
     void read_file();
-    // method for calculating the RHS of ODE
+    /// method for calculating the RHS of ODE
     double RHS(E::ArrayXd coefs, const double y_value, const double t_value, const double x_value);
 
 private:
