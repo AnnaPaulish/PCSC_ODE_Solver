@@ -15,6 +15,7 @@ We consider the following numerical methods:
 # Requirements
 To run it properly you need:
 - [Eigen library](https://eigen.tuxfamily.org/index.php?title=Main_Page)
+- [Doxygen](https://www.doxygen.nl/manual/install.html)
 
 # How to run the code
 First clone the repo to your preferred location:
@@ -22,7 +23,7 @@ First clone the repo to your preferred location:
 git clone https://github.com/ldriever/PCSC_ODE_Solver.git
 ```
 
-## How to run the code frome the Command Line
+## How to run the code from the Command Line
 
 ## The code structure
 - `CMakeLists.txt`: the main executable file is main.cpp
@@ -57,8 +58,9 @@ After executing the program, the solution to the ordinary differential equation 
 # Implementation
 
 ## Structure of classes 
-
+![alt text](https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/Classes.PNG)
 # Tests
+
 # Documentation
 
 
