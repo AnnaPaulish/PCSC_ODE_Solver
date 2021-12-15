@@ -15,7 +15,7 @@ We consider the following numerical methods:
 # Requirements
 To run it properly you need:
 - [Eigen library](https://eigen.tuxfamily.org/index.php?title=Main_Page)
-- [Doxygen](https://www.doxygen.nl/manual/install.html)
+- [Doxygen](https://www.doxygen.nl/download.html)
 
 # How to run the code
 First clone the repo to your preferred location:
@@ -61,6 +61,8 @@ After executing the program, the solution to the ordinary differential equation 
 # Tests
 
 # Documentation
+To create documentation using a file follow the instructions below.
+1. Install Doxygen from [here](https://www.doxygen.nl/download.html).
 
 
 
