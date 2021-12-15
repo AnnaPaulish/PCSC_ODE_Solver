@@ -1,6 +1,4 @@
-//
-// Created by Leonhard Driever on 03.12.21.
-//
+
 #include "setup.h"
 #include "output.h"
 #include "handle_method.h"

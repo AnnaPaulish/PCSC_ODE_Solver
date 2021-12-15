@@ -6,9 +6,13 @@
 #include <Eigen/Dense>
 namespace E = Eigen;
 
+/**
+* This is a class that write the solution of the ordinary differential equation to the file or prints it to the console
+*/
+
 class Output {
 public:
-    // Constructor and destructor
+    /// Constructor of the class Output
     Output(SetUp user_setup, E::ArrayXd& solution);
     void write();
 
@@ -18,7 +22,12 @@ private:
     E::ArrayXd y;
     E::ArrayXd t;
 
+    /** Writes the solution of the ODE to the file
+    \param path Specifies the path to the output file
+    */
     void write_file(std::string path);
+
+    /// Prints the solution of the ODE to the console
     void write_to_screen();
 
 
