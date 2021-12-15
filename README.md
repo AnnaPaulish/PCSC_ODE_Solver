@@ -22,6 +22,7 @@ First clone the repo to your preferred location:
 git clone https://github.com/ldriever/PCSC_ODE_Solver.git
 ```
 
+## How to run the code frome the Command Line
 
 ## The code structure
 - `CMakeLists.txt`: the main executable file is main.cpp
