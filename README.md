@@ -47,7 +47,6 @@ The default settings correspond to:
 ![equation](https://latex.codecogs.com/gif.latex?\inline&space;\quad&space;f(y,t,x)&space;=&space;1\cdot&space;y^{0}&plus;2\cdot&space;y^{1}&plus;3&space;\cdot&space;y^{2})
 - `console_output` - an integer variable which indicates whether to output the solution to the console. If equal to 0 - no output in the console, 1 - solution will be printed in the console. Equal to 1 by default.
 - `output_path` - a string variable without quotation marks contains the name of the output file with the solution of ODE. As a default: output.txt
-- `testing` - an integer variable which indicates whether to test the program: 0 - no testing (by default), 1 - the code will be tested.
 
 Make sure that the`settings.txt` file is in the `cmake-build-debug\` folder and contains correct input parameters.
 Then you can run the `main.cpp` file.
