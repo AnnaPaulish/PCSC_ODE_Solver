@@ -57,6 +57,7 @@ After executing the program, the solution to the ordinary differential equation 
 
 ## Structure of classes 
 
+# Tests
 # Documentation
 
 
