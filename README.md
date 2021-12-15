@@ -1,5 +1,5 @@
 # PCSC_ODE_Solver
-In this repository we provide implementation of different solvers for the Project 2: "Ordinary Differential Equations" of the class Programming Concepts in Scientific Computing, MATH-458 <br/>
+In this repository we provide implementation of the ODE solver for the Project 2: "Ordinary Differential Equations" of the class Programming Concepts in Scientific Computing, MATH-458 <br/>
 _Authors: Driever Leonhard Xaver, Anna Paulish_
 
 # Introduction
@@ -9,8 +9,8 @@ This project focuses on implementation of numerical methods for solving ordinary
 
 We consider the following numerical methods:
 - explicit methods: Forward Euler and the multistep Adams Bashforth (up to 4 steps);
--  implicit Backward Euler method;
--  explicit Runge-Kutta method.
+- implicit Backward Euler method;
+- explicit Runge-Kutta method.
 
 # Requirements
 To run it properly you need:
