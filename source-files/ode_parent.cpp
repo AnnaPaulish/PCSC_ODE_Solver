@@ -3,7 +3,7 @@
 #include "setup.h"
 
 #include "iostream"
-
+//Todo add nice file headers for all files
 ODE::ODE(SetUp &user_setup) {//TODO implement an infinity error
 
     // Declaring all the members

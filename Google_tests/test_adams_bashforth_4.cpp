@@ -1,39 +1,40 @@
 #include "gtest/gtest.h"
-#include "test_ode.cpp"
-#include "forward_euler.cpp"
+#include "test_adams_bashforth_3.cpp"
+#include "adams_bashforth_4.cpp"
 
-struct ForwardEulerTest : ODETest
+struct AdamsBashforth_4Test : AdamsBashforth_3Test
 {
-    class ForwardEuler* ode;
-    int method_accuracy = 1;
-    ForwardEulerTest()
+    class AdamsBashforth_4* ode;
+    int method_accuracy = 4;
+    AdamsBashforth_4Test()
     {
-        ode = new ForwardEuler(*test_setup);
+        ode = new AdamsBashforth_4(*test_setup);
     }
-    virtual ~ForwardEulerTest()
+    virtual ~AdamsBashforth_4Test()
     {
         delete ode;
     }
 };
 
-TEST_F(ForwardEulerTest, TestSolution) {
+TEST_F(AdamsBashforth_4Test, TestSolution) {
     E::ArrayXd solution = ode->Solve();
     ASSERT_EQ(test_setup->t.size(), solution.size()); // Check that the t and y arrays are of equal size
     ASSERT_NEAR(solution(E::last), exact_solution, abs(0.01 * exact_solution)); // Check that the solution is within 1% of the exact solution
 };
 
-TEST_F(ForwardEulerTest, TestConvergence) {
+TEST_F(AdamsBashforth_4Test, TestConvergence) {
     // first create a new version of the ode with halved step size
     auto refined_test_setup = new class SetUp("test_settings.txt");
     refined_test_setup->dt = test_setup->dt / 2;
     refined_test_setup->N = test_setup->N * 2;
     refined_test_setup->solution_size = test_setup->solution_size * 2 - 1;
-    auto refined_ode = ForwardEuler(*refined_test_setup);
+    auto refined_ode = AdamsBashforth_4(*refined_test_setup);
 
     auto error = abs(ode->Solve()(E::last) - exact_solution);
     auto refined_error = abs(refined_ode.Solve()(E::last) - exact_solution);
 
     delete refined_test_setup;
 
-    ASSERT_NEAR(error / refined_error, std::pow(2, method_accuracy), 0.1); // Check that the solution is within 1% of the exact solution
+    ASSERT_NEAR(error / refined_error, std::pow(2, method_accuracy), 0.1);
 };
+

@@ -9,5 +9,5 @@ include_directories(../source-files)
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-add_executable(Google_Tests_run test_forward_euler.cpp)# implicitly also test the setup
+add_executable(Google_Tests_run test_adams_bashforth_4.cpp )# implicitly also test the setup
 target_link_libraries(Google_Tests_run gtest gtest_main)

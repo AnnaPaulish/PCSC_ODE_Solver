@@ -1,7 +1,3 @@
-//
-// Created by Leonhard Driever on 11.12.21.
-//
-
 #include "gtest/gtest.h"
 #include "setup.cpp"
 
