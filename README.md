@@ -12,8 +12,18 @@ We consider the following numerical methods:
 -  implicit Backward Euler method;
 -  explicit Runge-Kutta method.
 
+# Requirements
+To run it properly you need:
+- [Eigen library](https://eigen.tuxfamily.org/index.php?title=Main_Page)
+- 
+# How to run the code
+First clone the repo to your preferred location:
+```
+git clone https://github.com/ldriever/PCSC_ODE_Solver.git
+```
 
-# The code structure
+
+## The code structure
 - `CMakeLists.txt`: the main executable file is main.cpp
 - `header-files\` folder contains all header files
 - `sourse-files\` folder contains all source files
@@ -37,21 +47,11 @@ The default settings correspond to:
 - `output_path` - a string variable without quotation marks contains the name of the output file with the solution of ODE. As a default: output.txt
 - `testing` - an integer variable which indicates whether to test the program: 0 - no testing (by default), 1 - the code will be tested.
 
+Make sure that the`settings.txt` file is in the `cmake-build-debug\` folder and contains correct input parameters.
+Then you can run the `main.cpp` file.
+
 ## Solution
 After executing the program, the solution to the ordinary differential equation will be written to the file specified by the user in `settings.txt`: it is `output.txt` by default.
-
-
-# Requirements
-To run it properly you need:
-- [Eigen library](https://eigen.tuxfamily.org/index.php?title=Main_Page)
-
-# How to run the code
-First clone the repo to your preferred location:
-```
-git clone https://github.com/ldriever/PCSC_ODE_Solver.git
-```
-Then make sure that there is a `settings.txt` file in the `cmake-build-debug\` folder that contains all the necessary input parameters.
-
 
 # Implementation
 
