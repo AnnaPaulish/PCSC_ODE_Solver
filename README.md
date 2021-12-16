@@ -6,7 +6,9 @@ _Authors: Leonhard Xaver Driever, Anna Paulish_
 - [the description of the project task](#Introduction)
 - [the code structure](#code_structure)
 - [hierarchy of classes](#classes_hierarchy)
-- [how to run the code](#run)
+- [dependencies](#dps)
+- [how to run the code with CLion](#run)
+- [how to run the code with Command Line](#run_CL)
 - [how to generate the documentation](#Documentation)
 - [how to test the code](#Tests)
 
@@ -47,7 +49,7 @@ We consider the following numerical methods:
 3. Doxygen can be installed from [here](https://www.doxygen.nl/download.html)
    - more details on how to customize the documentation can be found [below](#Documentation)
 
-
+# <a name="dps"></a> Dependencies
 
 
 # <a name="run"></a> Running the code from CLion
@@ -63,7 +65,7 @@ Make sure that the `settings.txt` file contains correct input parameters.
 
 Then you need to select the executable `ODE` file and run it.
 
-# Running the code from the Command Line
+#  <a name="run_CL"></a> Running the code from the Command Line
 1. From a terminal window, change to the `cmake-build-debug\` folder in project directory.
 2. Paste the following commands 
 
