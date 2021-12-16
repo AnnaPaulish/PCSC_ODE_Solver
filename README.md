@@ -84,7 +84,7 @@ In the cloned directory `PCSC_ODE_Solver` create the following two empty directo
 IMPORTANT: only create the *cmake-build-debug* directory if you want to run the code from the command line. Do not create that directory
 if you want to run the code using CLion. In that case CLion will auto-create the directory itself.
 
-- cmake-build-debug
+- cmake-build-debug (not if using CLion)
 - Documentation
 
 ### Step 3: Installing the necessary dependencies
