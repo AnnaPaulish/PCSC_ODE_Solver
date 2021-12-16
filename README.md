@@ -2,7 +2,16 @@
 In this repository we provide implementation of the ODE solver for the Project 2: "Ordinary Differential Equations" of the class Programming Concepts in Scientific Computing, MATH-458 <br/>
 _Authors: Leonhard Xaver Driever, Anna Paulish_
 
-# Introduction
+## Table of content
+- [the description of the project task](#Introduction)
+- [the code structure](#code_structure)
+- [hierarchy of classes](#classes_hierarchy)
+- [how to run the code](#run)
+- [how to generate the documentation](#Documentation)
+- [how to test the code](#Tests)
+
+
+# <a name="Introduction"></a>  Introduction
 This project focuses on implementation of numerical methods for solving ordinary differential equations (ODEs) with a given initial value.
 <br/> <p align="center"> ![equation]( https://latex.codecogs.com/gif.latex?\frac{dy}{dt}=f(y,t,x)&space;\quad&space;y(t_0)=y_0) 
 </p> <br/>
@@ -12,22 +21,7 @@ We consider the following numerical methods:
 - implicit Backward Euler method;
 - explicit Runge-Kutta method.
 
-# Requirements
-To run it properly you need:
-- [Eigen library](https://eigen.tuxfamily.org/index.php?title=Main_Page)
-- GoogleTest
-- [Doxygen](https://www.doxygen.nl/download.html)
-
-Note: you need to copy Eigen/ subdirectory to the project directory.
-
-
-# How to run the code
-First clone the repo to your preferred location:
-```
-git clone https://github.com/ldriever/PCSC_ODE_Solver.git
-```
-
-## The code structure
+# <a name="code_structure"></a> The code structure
 - `CMakeLists.txt`: the main executable file is main.cpp
 - `header-files\` folder contains all header files
 - `sourse-files\` folder contains all source files
@@ -36,12 +30,35 @@ git clone https://github.com/ldriever/PCSC_ODE_Solver.git
 
 <br/>
 
-Make sure that the `settings.txt` file is in the `cmake-build-debug\` folder and contains correct input parameters.
+
+# <a name="classes_hierarchy"></a> Structure of classes 
+![alt text](https://github.com/ldriever/PCSC_ODE_Solver/blob/main/readme_images/Classes.PNG)
+
+# <a name="Requirements"></a> Requirements
+1. Eigen library can be downloaded from [here](https://eigen.tuxfamily.org/index.php?title=Main_Page)
+   - you need to copy Eigen/ subdirectory to the project directory.
+2. GoogleTest can be downloaded from [here](https://github.com/google/googletest)
+   - create an epmty folder `Google_tests/` and extract the contents of googletest-master there
+3. Doxygen can be installed from [here](https://www.doxygen.nl/download.html)
+   - more details on how to customize the documentation can be found [below](#Documentation)
+
+
+
+
+# <a name="run"></a> Running the code from CLion
+
+First clone the repo to your preferred location:
+
+```
+git clone https://github.com/ldriever/PCSC_ODE_Solver.git
+```
+
+Make sure that the `settings.txt` file contains correct input parameters.
 <br/>
 
-Then you can run the `main.cpp` file.
+Then youneed to select the executable `ODE` file and run it.
 
-## How to run the code from the Command Line
+# Running the code from the Command Line
 1. From a terminal window, change to the `cmake-build-debug\` folder in project directory.
 2. Paste the following commands 
 
@@ -56,7 +73,7 @@ make
 ```
 
 
-## Input parameters
+### Input parameters
 In order to solve an ordinary differential equation, you need to determine all the initial parameters using `settings.txt` file with the following values:
 - `method_name` - a string variable without quotation marks contains the name of method. You have several options to define it:
 ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, AdamsBashforth_4, RungeKutta or BackwardEuler.
@@ -74,26 +91,20 @@ The default settings correspond to:
 
 
 
-## Solution
+### Solution
 After executing the program, the solution to the ordinary differential equation will be written to the file specified by the user in `settings.txt`: it is `output.txt` by default.
 
-# Implementation
+# <a name="Documentation"></a> Documentation
 
-## Structure of classes 
-![alt text](https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/Classes.PNG)
-
-# Documentation
-To create documentation follow the instructions below.
+To create documentation by yourself follow the instructions below.
 1. Install __doxygen__ from [here](https://www.doxygen.nl/download.html). Scroll down to the section “Sources and Binaries” and download the version that has support for your particular operating system, be it Linux or Mac or Windows.
-<p align="center"> <img src="https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/doxygen_install.PNG" width=50% height=50%> </p>
+<p align="center"> <img src="./readme_images/doxygen_install.PNG" width=50% height=50%> </p>
 
 2. Open __doxywizard__ which is a GUI front-end for configuring and running doxygen.
-<p align="center"> <img src="https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/open_doxygen.PNG"  width=50% height=50%> </p>
+<p align="center"> <img src="./readme_images/open_doxygen.PNG"  width=50% height=50%> </p>
 <br/>
 3. Specify the working directory from which doxygen will run using the Select... button. <br/><br/>
- <p align="center"> <img src="https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/select_doxygen.PNG" > </p> <br/>
- 
- <br/>
+ <p align="center"> <img src="./readme_images/select_doxygen.PNG" > </p> <br/> <br/>
 
 In the Wizard tab you need to modify next fields:
 ###### Project field
@@ -101,23 +112,23 @@ In the Wizard tab you need to modify next fields:
 - Project name: Project 2 - ODE Solver (for example)
 - Source location: Here you need to enter the path to `sourse-files\` folder
 - Destination location: Here you can enter the folder in which you want to save the documentation generated by Doxygen. For example, in the project directory you can create a folder for documentation `PCSC_ODE_Solver\Documentation\`. <br/><br/>
-     <p align="center"> <img src="https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/wizard_doxygen.PNG" width=75% height=75%> </p>
+     <p align="center"> <img src="./readme_images/wizard_doxygen.PNG" width=75% height=75%> </p>
    
 ###### Mode field
 
 - Extraction mode: _All Entities_ or _Documented entities only_
 - Programming Language: _Optimize for C++ output_
 <br/>
-<p align="center"> <img src="https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/mode_field.PNG"  width=75% height=75%> </p>
+<p align="center"> <img src="./readme_images/mode_field.PNG"  width=75% height=75%> </p>
 <br/>
 
 In the Expert tab in the __Input__ field you need to specify the `header-files\` directory.
 <br/>
-<p align="center"> <img src="https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/expert_tab.PNG"  width=75% height=75%> </p>
+<p align="center"> <img src="./readme_images/expert_tab.PNG"  width=75% height=75%> </p>
 <br/>
 4. Finally in the Run tab, you can click the "Run doxygen" button and then the "Show HTML output" to see the HTML results.
 <br/>
-<p align="center"> <img src="https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/doxywizard.gif"  width=75% height=75%> </p>
+<p align="center"> <img src="./readme_images/doxywizard.gif"  width=75% height=75%> </p>
 <br/>
 
 # Testing
