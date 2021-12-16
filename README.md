@@ -85,7 +85,7 @@ After executing the program, the solution to the ordinary differential equation 
 # Tests
 
 # Documentation
-To create documentation using a file follow the instructions below.
+To create documentation follow the instructions below.
 1. Install __doxygen__ from [here](https://www.doxygen.nl/download.html). Scroll down to the section “Sources and Binaries” and download the version that has support for your particular operating system, be it Linux or Mac or Windows.
 <p align="center"> <img src="https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/doxygen_install.PNG" width=50% height=50%> </p>
 
