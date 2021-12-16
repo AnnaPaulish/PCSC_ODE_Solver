@@ -8,7 +8,6 @@
 struct ODETest : SetUpTest
 {
     double exact_solution;
-    class SetUp solution;
     ODETest()
     {
         // Calculate the final solution, knowing that for the test setup t_0 = 0 and y_0 = -1
