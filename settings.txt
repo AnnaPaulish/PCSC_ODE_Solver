@@ -1,1 +1,31 @@
-RungeKutta 0 1 1000 0.001 200 2 1 1 0 1 None 0
+ForwardEuler 0 1 10 0.01 1 2 1 2 3 0 output.txt 0
+
+
+\\ Please change the above values if desired. The description of each argument you can find below
+
+__________________________________________________________________________________________________________________________________________
+ 
+
+- argument 1 (=method) - a string variable without quotation marks contains the name of method. You have several options to define it:
+ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, AdamsBashforth_4, RungeKutta or BackwardEuler.
+
+- argument 2 (=t_0) - a double variable for initial time: 0 as a default
+
+- argument 3 (=y_0) - a double variable for initial y value: 1 as a default
+
+- argument 4 (=N) - an integer variable for total number of time steps: 10 as a default
+
+- argument 5 (=dt) - a double variable for the time step size: 0.01 as a default
+
+- argument 6 (=sampling_frequency) - an integer variable to shorten the output. 
+For example, you can output every third element of the solution (in this case sampling_frequency = 3). 
+Define sampling_frequency = 1 to show the entire solution: 1 as a default
+
+- argument 7 (=polynomial_degree) - an integer variable for the degree of the polynomial on the right side of the equation: 2 as a default
+
+- argument 8 (=poly_coefs) - integers separated by spaces for the coefficients of the polynomial on the right side of the equation starting from degree zero: 1 2 3 as a default.
+
+- argument 9 (=console_output) - an integer variable which indicates whether to output the solution to the console. 
+If equal to 0 - no output in the console, 1 - solution will be printed in the console. Equal to 0 by default.
+
+- argument 10 (=output_path) - a string variable without quotation marks contains the name of the output file with the solution of ODE. As a default: output.txt
