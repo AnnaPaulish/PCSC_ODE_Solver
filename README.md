@@ -97,13 +97,16 @@ After executing the program, the solution to the ordinary differential equation 
 # <a name="Documentation"></a> Documentation
 
 To create documentation by yourself follow the instructions below.
-1. Install __doxygen__ from [here](https://www.doxygen.nl/download.html). Scroll down to the section “Sources and Binaries” and download the version that has support for your particular operating system, be it Linux or Mac or Windows.
+### Step 1
+Install __doxygen__ from [here](https://www.doxygen.nl/download.html). Scroll down to the section “Sources and Binaries” and download the version that has support for your particular operating system, be it Linux or Mac or Windows.
 <p align="center"> <img src="./readme_images/doxygen_install.PNG" width=50% height=50%> </p>
 
-2. Open __doxywizard__ which is a GUI front-end for configuring and running doxygen.
+### Step 2
+Open __doxywizard__ which is a GUI front-end for configuring and running doxygen.
 <p align="center"> <img src="./readme_images/open_doxygen.PNG"  width=50% height=50%> </p>
 <br/>
-3. Specify the working directory from which doxygen will run using the Select... button. <br/><br/>
+### Step 3
+Specify the working directory from which doxygen will run using the Select... button. <br/><br/>
  <p align="center"> <img src="./readme_images/select_doxygen.PNG" > </p> <br/> <br/>
 
 In the Wizard tab you need to modify next fields:
@@ -126,7 +129,8 @@ In the Expert tab in the __Input__ field you need to specify the `header-files\`
 <br/>
 <p align="center"> <img src="./readme_images/expert_tab.PNG"  width=75% height=75%> </p>
 <br/>
-4. Finally in the Run tab, you can click the "Run doxygen" button and then the "Show HTML output" to see the HTML results.
+### Step 4 
+Finally in the Run tab, you can click the "Run doxygen" button and then the "Show HTML output" to see the HTML results.
 <br/>
 <p align="center"> <img src="./readme_images/doxywizard.gif"  width=75% height=75%> </p>
 <br/>
