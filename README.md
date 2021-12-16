@@ -84,7 +84,7 @@ In the cloned directory `PCSC_ODE_Solver` create the following two empty directo
 IMPORTANT: only create the *cmake-build-debug* directory if you want to run the code from the command line. Do not create that directory
 if you want to run the code using CLion. In that case CLion will auto-create the directory itself.
 
-- cmake-build-debug
+- cmake-build-debug (not if using CLion)
 - Documentation
 
 ### Step 3: Installing the necessary dependencies
@@ -94,7 +94,7 @@ In order to run this code, the following three dependencies must be installed in
 1. Eigen library can be downloaded from [here](https://eigen.tuxfamily.org/index.php?title=Main_Page)
    - Download the Eigen library as a zip folder. Once downloaded, unzip the folder and move the directory into the project directory. Then rename the Eigen directory (for example it may be called *eigen-3.4.0*) to *eigen* (make sure that it is lower case)
 2. GoogleTest can be downloaded from [here](https://github.com/google/googletest)
-   - Download GoogleTest as a zip folder. Once downloaded, unzip the folder and move the directory into the project directory. Then rename the GoogleTest directory (for example it may be called *googletest-main*) to *Google_tests* (again make sure to consider capitalization)
+   - Download Google Test as a zip folder or clone the repository. Once downloaded, unzip the folder and move the directory into the project directory. Then rename the Google Test directory (for example it may be called *googletest-main*) to *Google_tests* (again make sure to consider capitalization)
 3. doxygen can be installed from [here](https://www.doxygen.nl/download.html)
    - doxygen is not necessary for running the code itself, but should be installed in order to see the documentation for the code. Please follow the detailed steps explained in the [documentation section](#Documentation)
 
@@ -109,7 +109,7 @@ In order to run this code, the following three dependencies must be installed in
 
 5. If the name for the output file was specified (i.e. is not *None*) the output file under that name can now be found in the project directory
 
-# Running the code from the Command Line
+# <a name="run_CL"></a> Running the code from the Command Line
 
 1. Ensure that all dependencies have been installed as described previously.
 2. Make sure that the `settings.txt` file contains correct input parameters.
@@ -250,7 +250,7 @@ make
 If it is desired to add new tests, for example because a new method was implemented, please place the corresponding C++ file in the directory *testing_files* and add the corresponding *#include* statement in the file *testing_main.cpp*.
 
 
-# Perspectives
+# <a name="outlook"></a> Perspectives
 
 In the current state of the code, there are no issues that the authors are aware of. However, there are possibilities for further
 developing the project. These perspectives are described below.
