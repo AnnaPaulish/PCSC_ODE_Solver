@@ -2,7 +2,13 @@
 #include "setup.h"
 #include "iostream"
 
-ODE::ODE(SetUp &user_setup) {//TODO implement an infinity error
+struct InfinityError : public std::exception{
+    const char * what () const throw () {
+        return "The differential equation diverges to infinity. Please choose a different ODE or truncate the time range within which the ODE is studied";
+    }
+};
+
+ODE::ODE(SetUp &user_setup) {
 
     // Declaring all the members
     t = user_setup.t;
@@ -32,6 +38,8 @@ E::ArrayXd &ODE::Solve() {
     double y_new;
     for (int iteration = method_length; iteration <= N; iteration++) {
         y_new = OneStep(iteration * dt + t_0);
+
+        if (isinf(y_new)) throw InfinityError();
 
         if ((iteration) % sampling_frequency == 0) {
             y[(iteration) / sampling_frequency] = y_new;
