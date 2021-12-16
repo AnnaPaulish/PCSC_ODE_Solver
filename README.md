@@ -62,7 +62,10 @@ After executing the program, the solution to the ordinary differential equation 
 
 # Documentation
 To create documentation using a file follow the instructions below.
-1. Install Doxygen from [here](https://www.doxygen.nl/download.html).
+1. Install doxygen** from [here](https://www.doxygen.nl/download.html). Scroll down to the section “Sources and Binaries” and download the version that has support for your particular operating system, be it Linux or Mac or Windows.
+![alt text](https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/doxygen_install.PNG)
+3. Open doxywizard** which is a GUI front-end for configuring and running doxygen.
+4. Specify the working directory from which doxygen** will run
 
 
 
