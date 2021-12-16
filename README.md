@@ -36,7 +36,7 @@ We consider the following numerical methods:
 
 # <a name="Requirements"></a> Requirements
 1. Eigen library can be downloaded from [here](https://eigen.tuxfamily.org/index.php?title=Main_Page)
-   - you need to copy Eigen/ subdirectory to the project directory.
+   - copy Eigen/ subdirectory to the project directory
 2. GoogleTest can be downloaded from [here](https://github.com/google/googletest)
    - create an epmty folder `Google_tests/` and extract the contents of googletest-master there
 3. Doxygen can be installed from [here](https://www.doxygen.nl/download.html)
