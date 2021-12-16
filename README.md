@@ -60,7 +60,7 @@ git clone https://github.com/ldriever/PCSC_ODE_Solver.git
 Make sure that the `settings.txt` file contains correct input parameters.
 <br/>
 
-Then youneed to select the executable `ODE` file and run it.
+Then you need to select the executable `ODE` file and run it.
 
 # Running the code from the Command Line
 1. From a terminal window, change to the `cmake-build-debug\` folder in project directory.
@@ -91,7 +91,7 @@ ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, Ada
 The default settings correspond to: 
 ![equation](https://latex.codecogs.com/gif.latex?\inline&space;\quad&space;f(y,t,x)&space;=&space;1\cdot&space;y^{0}&plus;2\cdot&space;y^{1}&plus;3&space;\cdot&space;y^{2})
 - `console_output` - an integer variable which indicates whether to output the solution to the console. If equal to 0 - no output in the console, 1 - solution will be printed in the console. Equal to 1 by default.
-- `output_path` - a string variable without quotation marks contains the name of the output file with the solution of ODE. As a default: output.txt
+- `output_path` - a string variable without quotation marks contains the name of the output file with the solution of ODE. As a default: _output.txt_
 
 
 
@@ -101,22 +101,27 @@ After executing the program, the solution to the ordinary differential equation 
 # <a name="Documentation"></a> Documentation
 
 To create documentation by yourself follow the instructions below.
-1. Install __doxygen__ from [here](https://www.doxygen.nl/download.html). Scroll down to the section “Sources and Binaries” and download the version that has support for your particular operating system, be it Linux or Mac or Windows.
+
+### Step 1
+Install __doxygen__ from [here](https://www.doxygen.nl/download.html). Scroll down to the section “Sources and Binaries” and download the version that has support for your particular operating system, be it Linux or Mac or Windows.
+
 <div style="width:600px">
 
 ![](readme_images/doxygen_install.PNG)
 </div>
 
-2. Open __doxywizard__ which is a GUI front-end for configuring and running doxygen.
+### Step 2
+Open __doxywizard__ which is a GUI front-end for configuring and running doxygen.
 <div style="width:600px">
 
 ![](readme_images/open_doxygen.PNG)
-</div>
-3. Specify the working directory from which doxygen will run using the Select... button. <br/><br/>
+</div><br/>
+
+### Step 3
+Specify the working directory from which doxygen will run using the Select... button. <br/><br/>
 <div style="width:600px">
 
 ![](readme_images/select_doxygen.PNG)
-</div>
 
 In the Wizard tab you need to modify next fields:
 ###### Project field
@@ -139,19 +144,21 @@ In the Wizard tab you need to modify next fields:
 ![](readme_images/mode_field.PNG)
 </div>
 In the Expert tab in the __Input__ field you need to specify the `header-files\` directory.
+<br/>
 <div style="width:600px">
 
 ![](readme_images/expert_tab.PNG)
-</div>
+</div><br/>
 
-4. Finally in the Run tab, you can click the "Run doxygen" button and then the "Show HTML output" to see the HTML results.
-
+### Step 4 
+Finally in the Run tab, you can click the "Run doxygen" button and then the "Show HTML output" to see the HTML results.
+<br/>
 <div style="width:600px">
 
 ![](readme_images/doxywizard.gif)
-</div>
+</div><br/>
 
-# Testing
+# <a name="Tests"></a> Testing
 
 To ensure a reliable program and to identify any codes that may have arisen during the programming, it is essential to test the code of the entire project.
 In order to do this, the Google Test framework is used. This framework, developed by Google for testing C++ code, provides a structured framework that allows the easy writing and execution
