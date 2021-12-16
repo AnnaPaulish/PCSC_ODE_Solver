@@ -109,7 +109,7 @@ In order to run this code, the following three dependencies must be installed in
 
 5. If the name for the output file was specified (i.e. is not *None*) the output file under that name can now be found in the project directory
 
-# Running the code from the Command Line
+# <a name="run_CL"></a> Running the code from the Command Line
 
 1. Ensure that all dependencies have been installed as described previously.
 2. Make sure that the `settings.txt` file contains correct input parameters.
@@ -249,7 +249,7 @@ make
 If it is desired to add new tests, for example because a new method was implemented, please place the corresponding C++ file in the directory *testing_files* and add the corresponding *#include* statement in the file *testing_main.cpp*.
 
 
-# Perspectives
+# <a name="outlook"></a> Perspectives
 
 In the current state of the code, there are no issues that the authors are aware of. However, there are possibilities for further
 developing the project. These perspectives are described below.
