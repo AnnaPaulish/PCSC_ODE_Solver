@@ -13,7 +13,8 @@ _Authors: Leonhard Xaver Driever, Anna Paulish_
 
 # <a name="Introduction"></a>  Introduction
 This project focuses on implementation of numerical methods for solving ordinary differential equations (ODEs) with a given initial value.
-<br/> <p align="center"> ![equation]( https://latex.codecogs.com/gif.latex?\frac{dy}{dt}=f(y,t,x)&space;\quad&space;y(t_0)=y_0) 
+<br/> <p align="center"> 
+   <img src="https://latex.codecogs.com/svg.image?\frac{dy}{dt}=f(y,t,x)\quad&space;y(t_0)=y_0" title="\frac{dy}{dt}=f(y,t,x)\quad y(t_0)=y_0" />
 </p> <br/>
 
 We consider the following numerical methods:
@@ -88,8 +89,8 @@ ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, Ada
 - `sampling_frequency` - an integer variable to shorten the output. For example, you can output every third element of the solution (in this case sampling_frequency = 3). Define sampling_frequency = 1 to show the entire solution: 1 as a default
 - `polynomial_degree` - an integer variable for the degree of the polynomial on the right side of the equation: 1 as a default
 - `poly_coefs` - integers separated by spaces for the coefficients of the polynomial on the right side of the equation starting from degree zero: 1 2 3 as a default. <br/>
-The default settings correspond to: 
-![equation](https://latex.codecogs.com/gif.latex?\inline&space;\quad&space;f(y,t,x)&space;=&space;1\cdot&space;y^{0}&plus;2\cdot&space;y^{1}&plus;3&space;\cdot&space;y^{2})
+The default settings correspond to: <img src="https://latex.codecogs.com/svg.image?\inline&space;\quad&space;\quad&space;f(y,t,x)&space;=&space;1\cdot&space;y^{0}&plus;2\cdot&space;y^{1}&plus;3&space;\cdot&space;y^{2}" title="\inline \quad&space;f(y,t,x)&space;=&space;1\cdot&space;y^{0}&plus;2\cdot&space;y^{1}&plus;3&space;\cdot&space;y^{2}" />
+
 - `console_output` - an integer variable which indicates whether to output the solution to the console. If equal to 0 - no output in the console, 1 - solution will be printed in the console. Equal to 1 by default.
 - `output_path` - a string variable without quotation marks contains the name of the output file with the solution of ODE. As a default: _output.txt_
 
