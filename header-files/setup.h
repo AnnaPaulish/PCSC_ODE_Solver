@@ -8,14 +8,14 @@ namespace E = Eigen;
 /**
  * This is a SetUp class to initialization of all input parameters
  */
- 
+
 class SetUp {
 public:
-    /// Constructor
+    /// Constructor of the SetUp class
     SetUp(std::string settings_path="../settings.txt");
 
-    /// total number of steps N
-    int N;
+   
+    int N;  ///< total number of steps N
 
     /// time step dt 
     double dt; 

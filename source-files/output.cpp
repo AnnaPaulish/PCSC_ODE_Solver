@@ -27,7 +27,7 @@ void Output::write() {
 
 void Output::write_file(std::string path){
 
-    std::ofstream output_file(path);
+    std::ofstream output_file("../" + path);
     // Check that file is properly opened.
     if (!output_file.is_open()) {
         std::cout << "Error opening output file." << std::endl;
