@@ -94,7 +94,7 @@ In order to run this code, the following three dependencies must be installed in
 1. Eigen library can be downloaded from [here](https://eigen.tuxfamily.org/index.php?title=Main_Page)
    - Download the Eigen library as a zip folder. Once downloaded, unzip the folder and move the directory into the project directory. Then rename the Eigen directory (for example it may be called *eigen-3.4.0*) to *eigen* (make sure that it is lower case)
 2. GoogleTest can be downloaded from [here](https://github.com/google/googletest)
-   - Download GoogleTest as a zip folder. Once downloaded, unzip the folder and move the directory into the project directory. Then rename the GoogleTest directory (for example it may be called *googletest-main*) to *Google_tests* (again make sure to consider capitalization)
+   - Download Google Test as a zip folder or clone the repository. Once downloaded, unzip the folder and move the directory into the project directory. Then rename the Google Test directory (for example it may be called *googletest-main*) to *Google_tests* (again make sure to consider capitalization)
 3. doxygen can be installed from [here](https://www.doxygen.nl/download.html)
    - doxygen is not necessary for running the code itself, but should be installed in order to see the documentation for the code. Please follow the detailed steps explained in the [documentation section](#Documentation)
 
