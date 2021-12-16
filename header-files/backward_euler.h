@@ -22,7 +22,7 @@ protected:
     int method_length = 1;
 
     /**
-    Implements the step of the Backward Euler algorithm
+    Needed to implement the step of the Backward Euler algorithm
     */
     double OneStep(double t);
 

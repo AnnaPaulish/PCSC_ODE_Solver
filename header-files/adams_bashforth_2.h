@@ -28,7 +28,7 @@ protected:
     void InitializeYShortTerm() {this->InitializeYShortTermAB2();};
 
     /**
-    Implements the step of the iteration of the Adams Bashforth algorithm with the step-size = 2
+    Needed to implement one step of the Adams Bashforth algorithm with the step-size = 2
     */
     double OneStepAB2(double t);
     double OneStep(double t) {return this->OneStepAB2(t);};
