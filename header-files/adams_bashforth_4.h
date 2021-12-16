@@ -15,6 +15,9 @@ public:
     AdamsBashforth_4(SetUp &user_setup);
 
 protected:
+    /**
+    Adams Bashforth algorithm with the step-size = 4 requires the knowledge of the first four elements of the y array
+    */
     const int method_length = 4;
 
     /** 

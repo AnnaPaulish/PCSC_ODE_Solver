@@ -20,6 +20,10 @@ public:
     ForwardEuler(SetUp &user_setup);
 
 protected:
+
+    /**
+    Forward Euler algorithm only requires the knowledge of the initial value of the y array
+    */
     int method_length = 1;
 
     /**

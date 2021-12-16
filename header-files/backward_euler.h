@@ -19,6 +19,9 @@ public:
     BackwardEuler(SetUp &user_setup);
 
 protected:
+    /**
+    Backward Euler algorithm only requires the knowledge of the initial value of the y array
+    */
     int method_length = 1;
 
     /**

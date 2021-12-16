@@ -20,6 +20,7 @@ public:
     /**  time step dt */
     double dt; 
 
+    /** independent variable of the ordinary differential equation*/ 
     double x;
 
     /**  the degree of the polynomial on the right side of the ODE */

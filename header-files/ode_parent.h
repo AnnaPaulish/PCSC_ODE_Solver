@@ -26,11 +26,21 @@ public:
     virtual ~ODE(){};
 
 protected:
+    /**  time step dt */
     double dt;
+
+    /** initial time value  */
     double t_0;
+
+    /** independent variable of the ordinary differential equation*/ 
     double x;
+
+    /** initial y value */
     double y_0;
+
+    /** total number of steps N */
     int N;
+    
     /** The required number of initial y elements needed to implement one step of the numerical method */
     int method_length; 
 
@@ -42,6 +52,8 @@ protected:
     
     /** The coefficients of the function on the right-hand side of the ODE */
     E::ArrayXd coefs; 
+
+    /** time array */
     E::ArrayXd t;
 
     /** 

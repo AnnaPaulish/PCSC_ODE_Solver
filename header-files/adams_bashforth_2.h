@@ -18,6 +18,9 @@ public:
     AdamsBashforth_2(SetUp &user_setup);
 
 protected:
+    /**
+    Adams Bashforth algorithm with the step-size = 2 requires the knowledge of the first two elements of the y array
+    */
     int method_length = 2;
 
     /** 

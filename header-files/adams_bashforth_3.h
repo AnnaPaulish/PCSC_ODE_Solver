@@ -15,6 +15,9 @@ public:
     AdamsBashforth_3(SetUp &user_setup);
 
 protected:
+    /**
+    Adams Bashforth algorithm with the step-size = 3 requires the knowledge of the first three elements of the y array
+    */
     int method_length = 3;
 
     /** 
