@@ -8,34 +8,59 @@ namespace E = Eigen;
 /**
  * This is a SetUp class to initialization of all input parameters
  */
+ 
 class SetUp {
 public:
     /// Constructor
     SetUp(std::string settings_path="../settings.txt");
 
-    int N; /// total number of steps N
-    double dt; /// time step dt
+    /// total number of steps N
+    int N;
+
+    /// time step dt 
+    double dt; 
+
     double x;
-    int polynomial_degree; /// the degree of the polynomial on the right side of the ODE
-    E::ArrayXd poly_coefs_y; ///  the coefficients of the polynomial on the right side of the ODE starting from degree zero
-    E::ArrayXd t; /// time array
-    double y_0; /// initial y value
-    int solution_size; /// number of elements in the solution array y
-    int sampling_frequency; /// parameter to shorten the output. For example, you can output every third element of the solution (in this case sampling_frequency = 3). Define sampling_frequency = 1 to show the entire solution
 
-    std::string output_path; /// Output file name: output.txt
-    bool console_output; // True if we want to get the result in Console
-    std::string method; // solving method (string without quotation marks)
+    /// the degree of the polynomial on the right side of the ODE
+    int polynomial_degree; 
 
-    bool testing; /// True if we want to test
+    ///  the coefficients of the polynomial on the right side of the ODE starting from degree zero
+    E::ArrayXd poly_coefs_y; 
+
+    /// time array
+    E::ArrayXd t; 
+
+    /// initial y value
+    double y_0; 
+
+    /// number of elements in the solution array y
+    int solution_size; 
+
+    /// parameter to shorten the output. For example, you can output every third element of the solution (in this case sampling_frequency = 3). Define sampling_frequency = 1 to show the entire solution
+    int sampling_frequency; 
+
+    /// Output file name: output.txt
+    std::string output_path; 
+
+    /// True if we want to get the result in console
+    bool console_output; 
+
+    /// solving method (string without quotation marks)
+    std::string method; 
+
     /// method for reading the settings
     void read_file();
-    /// method for calculating the RHS of ODE
+
+    /// method for calculating the right-hand side of ODE
     double RHS(E::ArrayXd coefs, const double y_value, const double t_value, const double x_value);
 
 private:
-    double t_0; /// initial time value
-    std::string settings_file_name; /// the name of the input file with the initial parameters of ODE
+    /// initial time value
+    double t_0; 
+
+    /// the name of the input file with the initial parameters of ODE
+    std::string settings_file_name; 
 };
 
 #endif //ODE_SOLVER_PROJECT_SETUP_H
