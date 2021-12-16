@@ -145,7 +145,7 @@ In the Wizard tab you need to modify next fields:
 ![](readme_images/mode_field.PNG)
 </div>
 In the Expert tab in the __Input__ field you need to specify the `header-files\` directory.
-<br/>
+<br/> <br/>
 <div style="width:600px">
 
 ![](readme_images/expert_tab.PNG)
