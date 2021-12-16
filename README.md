@@ -7,11 +7,12 @@ _Authors: Leonhard Xaver Driever, Anna Paulish_
 - [the description of the project task](#Introduction)
 - [the code structure](#code_structure)
 - [hierarchy of classes](#classes_hierarchy)
-- [dependencies](#Dependencies)
+- [setting up the project on your computer](#setup)
 - [how to run the code with CLion](#run)
 - [how to run the code with Command Line](#run_CL)
 - [how to generate the documentation](#Documentation)
 - [how to test the code](#Tests)
+- [perspectives](#outlook)
 
 
 # <a name="Introduction"></a>  Introduction
@@ -66,52 +67,68 @@ steps of the solution, these methods inherit from one another. This class inheri
 ![](readme_images/Classes.PNG)
 </div>
 
-# <a name="Dependencies"></a> Dependencies
+# <a name="setup"></a> Project Setup
+Please follow the following steps in order to set up the code on your computer.
 
-In order to run this code, the following three dependencies must be installed.
+### Step 1: Cloning the GitHub repository
 
-1. Eigen library can be downloaded from [here](https://eigen.tuxfamily.org/index.php?title=Main_Page)
-   - copy the Eigen/ subdirectory to the project directory
-2. GoogleTest can be downloaded from [here](https://github.com/google/googletest)
-   - create an epmty folder `Google_tests/` and place the contents of the googletest-master directory there
-3. Doxygen can be installed from [here](https://www.doxygen.nl/download.html)
-   - more details on how to customize the documentation can be found [below](#Documentation)
-
-# <a name="run"></a> Running the code in CLion
-
-1. Clone the repository to your preferred location:
+Clone the repository to your preferred location using the following command:
 
 ```
 git clone https://github.com/ldriever/PCSC_ODE_Solver.git
 ```
 
-2. Ensure that all dependencies have been installed as described previously.
+### Step 2: Creating auxilliary directories
+
+In the cloned directory `PCSC_ODE_Solver` create the following two empty directories (beware of lower and upper case). 
+IMPORTANT: only create the *cmake-build-debug* directory if you want to run the code from the command line. Do not create that directory
+if you want to run the code using CLion. In that case CLion will auto-create the directory itself.
+
+- cmake-build-debug
+- Documentation
+
+### Step 3: Installing the necessary dependencies
+
+In order to run this code, the following three dependencies must be installed in the specified ways.
+
+1. Eigen library can be downloaded from [here](https://eigen.tuxfamily.org/index.php?title=Main_Page)
+   - Download the Eigen library as a zip folder. Once downloaded, unzip the folder and move the directory into the project directory. Then rename the Eigen directory (for example it may be called *eigen-3.4.0*) to *eigen* (make sure that it is lower case)
+2. GoogleTest can be downloaded from [here](https://github.com/google/googletest)
+   - Download GoogleTest as a zip folder. Once downloaded, unzip the folder and move the directory into the project directory. Then rename the GoogleTest directory (for example it may be called *googletest-main*) to *Google_tests* (again make sure to consider capitalization)
+3. doxygen can be installed from [here](https://www.doxygen.nl/download.html)
+   - doxygen is not necessary for running the code itself, but should be installed in order to see the documentation for the code. Please follow the detailed steps explained in the [documentation section](#Documentation)
+
+# <a name="run"></a> Running the code in CLion
+
+1. Ensure that all dependencies have been installed as described previously.
+2. Make sure that there is no existing empty directory *cmake-build-debug*, then open the project in CLion
 
 3. Make sure that the `settings.txt` file contains correct input parameters.
 
 4. Select the executable `ODE` and run it.
 
-# Running the code from the Command Line
-1. First clone the repository to your preferred location:
+5. If the name for the output file was specified (i.e. is not *None*) the output file under that name can now be found in the project directory
 
-```
-git clone https://github.com/ldriever/PCSC_ODE_Solver.git
-```
-2. Ensure that all dependencies have been installed as described previously.
-3. Make sure that the `settings.txt` file contains correct input parameters.
-4. If it does not yet exist, create a directory called `cmake-build-debug` in the cloned project directory
-5. From a terminal window, change to the `cmake-build-debug\` folder in project directory.
-6. Paste the following commands:
+# Running the code from the Command Line
+
+1. Ensure that all dependencies have been installed as described previously.
+2. Make sure that the `settings.txt` file contains correct input parameters.
+3. If it does not yet exist, create a directory called `cmake-build-debug` in the cloned project directory
+4. From a terminal window, change to the `cmake-build-debug\` folder in project directory.
+- If an error such as `cmake: command not found` appears, install cmake. Instructions for how to do this can be found [online](https://cmake.org/install/)
+5. Paste the following commands:
 
 ``` 
 cmake ..
 make
 ```
-7. To run the project use the command:
+6. To run the project use the command:
 
 ``` 
 ./ODE 
 ```
+
+7. If the name for the output file was specified (i.e. is not *None*) the output file under that name can now be found in the project directory
 
 
 # <a name="Documentation"></a> Documentation
@@ -146,7 +163,7 @@ In the Wizard tab you need to modify next fields:
 
 - Project name: Project 2 - ODE Solver (for example)
 - Source location: Here you need to enter the path to `sourse-files\` folder
-- Destination location: Here you can enter the folder in which you want to save the documentation generated by Doxygen. For example, in the project directory you can create a folder for documentation `PCSC_ODE_Solver\Documentation\`. <br/><br/>
+- Destination location: Here you can enter the folder in which you want to save the documentation generated by doxygen. For example, in the project directory you can create a folder for documentation `PCSC_ODE_Solver\Documentation\`. <br/><br/>
 
 <div style="width:600px">
 
@@ -226,3 +243,26 @@ make
 ### Adding New Tests
 
 If it is desired to add new tests, for example because a new method was implemented, please place the corresponding C++ file in the directory *testing_files* and add the corresponding *#include* statement in the file *testing_main.cpp*.
+
+
+# Perspectives
+
+In the current state of the code, there are no issues that the authors are aware of. However, there are possibilities for further
+developing the project. These perspectives are described below.
+
+### Allowing more elaborate RHS Functions
+Right now the solver is restricted to solving ordinary differential equations where the derivative of y is equal to a polynomial function of y.
+It is desired that also more elaborate functions can be used for the right-hand side (RHS) of the ODE. This can be easily done by adjusting the SetUp class.
+
+### Adding more Methods
+So far the ODE solver program offers six different methods, five explicit and one implicit. Adding new ODE solution methods, such as higher-order Adams-Bashforth methods for example, is very easy given the way in which the program is set up.
+Adding such a new method can be done by simply inheriting from the ODE parent class (or the Adams-Bashforth classes if
+applicable) and adding a new header and source file. Implementing the corresponding test is also very simple, as existing tests can be copied and only a few lines of code need to be modified.
+
+### Simpler Settings File
+Right now, the settings file is sensitive to user mistakes that modify the file format. Furthermore, it is not as straightforward to understand which entry corresponds to which parameter.
+To implement the reading of a different file format, only one function (namely the *read_file()* method of the SetUp class) has to be modified.
+
+### More output formats
+One interesting functionality that could be added in future is to provide the option to directly plot the calculation results. 
+This can be done by simply adjusting the Output class and (if this format is desired) adding an additional variable *plot* to the SetUp class and settings file.

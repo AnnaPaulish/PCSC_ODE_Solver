@@ -6,7 +6,7 @@ struct SetUpTest : testing::Test
     class SetUp* test_setup;
     SetUpTest()
     {
-        test_setup = new class SetUp("testing_files/test_settings.txt");
+        test_setup = new class SetUp("../testing_files/test_settings.txt");
     }
     virtual ~SetUpTest()
     {
