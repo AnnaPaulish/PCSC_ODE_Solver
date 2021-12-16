@@ -99,6 +99,7 @@ After executing the program, the solution to the ordinary differential equation 
 To create documentation by yourself follow the instructions below.
 ### Step 1
 Install __doxygen__ from [here](https://www.doxygen.nl/download.html). Scroll down to the section “Sources and Binaries” and download the version that has support for your particular operating system, be it Linux or Mac or Windows.
+
 <p align="center"> <img src="./readme_images/doxygen_install.PNG" width=50% height=50%> </p>
 
 ### Step 2
