@@ -73,7 +73,7 @@ make
 ```
 
 
-## Input parameters
+### Input parameters
 In order to solve an ordinary differential equation, you need to determine all the initial parameters using `settings.txt` file with the following values:
 - `method_name` - a string variable without quotation marks contains the name of method. You have several options to define it:
 ForwardEuler (for Forward Euler method), AdamsBashforth_2, AdamsBashforth_3, AdamsBashforth_4, RungeKutta or BackwardEuler.
@@ -91,12 +91,8 @@ The default settings correspond to:
 
 
 
-## Solution
+### Solution
 After executing the program, the solution to the ordinary differential equation will be written to the file specified by the user in `settings.txt`: it is `output.txt` by default.
-
-# Implementation
-
-# Tests
 
 # <a name="Documentation"></a> Documentation
 
@@ -135,4 +131,4 @@ In the Expert tab in the __Input__ field you need to specify the `header-files\`
 <p align="center"> <img src="./readme_images/doxywizard.gif"  width=75% height=75%> </p>
 <br/>
 
-
+# Tests
