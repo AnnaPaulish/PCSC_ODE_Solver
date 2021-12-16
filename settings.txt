@@ -1,4 +1,4 @@
-ForwardEuler 0 1 10 0.01 1 2 1 2 3 0 output.txt
+ForwardEuler 0 2 100 0.01 10 2 1 1 -2 1 output.txt
 
 
 \\ Please change the above values if desired. The description of each argument you can find below

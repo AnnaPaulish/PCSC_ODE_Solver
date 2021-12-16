@@ -159,7 +159,7 @@ Open __doxywizard__ which is a GUI front-end for configuring and running doxygen
 </div><br/>
 
 ### Step 3
-Specify the working directory which should be the cloned directory from which doxygen will run using the Select... button. <br/><br/>
+Specify the working directory, which should be the cloned project directory, from which doxygen will run using the *Select...* button. <br/><br/>
 <div style="width:600px">
 
 ![](readme_images/select_doxygen.PNG)
@@ -185,7 +185,8 @@ In the Wizard tab you need to modify next fields:
 
 ![](readme_images/mode_field.PNG)
 </div>
-In the Expert tab switch to the __Input__ field in the left panel. Here in the _INPUT_ tag you need to specify the `header-files\` directory using the _Browse to a folder_ button.
+
+Now go to the _Expert_ tab and switch to the __Input__ field in the left panel. Here in the _INPUT_ tag you need to specify the `header-files\` directory using the button with the folder icon.
 <br/> <br/>
 <div style="width:600px">
 

@@ -29,6 +29,9 @@ void SetUp::read_file() {
     read_settings >> dt;
 
     read_settings >> sampling_frequency;
+
+    if (sampling_frequency > N) sampling_frequency = N;
+
     read_settings >> polynomial_degree;
 
     solution_size = int(std::floor((N+1)/sampling_frequency)) + 1;
