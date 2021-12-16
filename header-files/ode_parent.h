@@ -1,6 +1,4 @@
-//
-// Created by Leonhard Driever on 03.12.21.
-//
+
 
 #ifndef ODE_SOLVER_PROJECT_ODE_CLASS_H
 #define ODE_SOLVER_PROJECT_ODE_CLASS_H
@@ -33,10 +31,17 @@ protected:
     double x;
     double y_0;
     int N;
-    int method_length; ///< The required number of initial y elements needed to implement one step of the numerical method
+    /** The required number of initial y elements needed to implement one step of the numerical method */
+    int method_length; 
+
+    /** An array that keeps the elements of the ODE solution */
     E::ArrayXd y;
-    E::ArrayXd y_short_term; ///< An array that keeps the required initial y elements needed to implement one step of the numerical method
-    E::ArrayXd coefs; ///< The coefficients of the function on the right-hand side of the ODE
+
+    /** An array that keeps the required initial y elements needed to implement one step of the numerical method */
+    E::ArrayXd y_short_term; 
+    
+    /** The coefficients of the function on the right-hand side of the ODE */
+    E::ArrayXd coefs; 
     E::ArrayXd t;
 
     /** 
@@ -63,7 +68,8 @@ protected:
     virtual int GetMethodLength() = 0;
 
 private:
-    int sampling_frequency; ///< Indicates the desired frequency of saving elements of the solution y
+    /** Indicates the desired frequency of saving elements of the solution y */
+    int sampling_frequency; 
 
     /** 
     If the numerical method requires more than one element to be used in the implementation step 

@@ -23,7 +23,7 @@ protected:
     int method_length = 1;
 
     /**
-    Implements the step of the Forward Euler algorithm
+    Needed to implement the step of the Forward Euler algorithm
     */
     double OneStepFE(double t);
     double OneStep(double t) {return this->OneStepFE(t);};
