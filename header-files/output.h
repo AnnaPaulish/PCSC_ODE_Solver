@@ -12,14 +12,23 @@ namespace E = Eigen;
 
 class Output {
 public:
-    /// Constructor of the class Output
+    /** Constructor of the class Output */
     Output(SetUp user_setup, E::ArrayXd& solution);
+
+    /** Writes the solution of the ODE to the file or to the console*/ 
     void write();
 
 private:
+    /** True if we want to get the result in console  */
     bool console_output;
+
+    /** Output file name: e.g. output.txt  */
     std::string output_path;
+
+    /** An array that keeps the elements of the ODE solution */
     E::ArrayXd y;
+
+    /** time array */
     E::ArrayXd t;
 
     /** Writes the solution of the ODE to the file
@@ -27,7 +36,7 @@ private:
     */
     void write_file(std::string path);
 
-    /// Prints the solution of the ODE to the console
+    /** Prints the solution of the ODE to the console */
     void write_to_screen();
 
 
