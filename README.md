@@ -174,7 +174,9 @@ In the Expert tab switch to the __Input__ field in the left panel. Here in the _
 </div><br/>
 
 ### Step 4 
-Finally in the Run tab, you can click the "Run doxygen" button and then the "Show HTML output" to see the HTML results.
+In the Run tab, you can click the "Run doxygen" button and then the "Show HTML output" to see the HTML results.
+<br/>
+Finally you can save the current configuration settings to disk with a specific name and this file name will become the currently set file name.
 
 # <a name="Tests"></a> Testing
 
