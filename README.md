@@ -56,7 +56,7 @@ git clone https://github.com/ldriever/PCSC_ODE_Solver.git
 Make sure that the `settings.txt` file contains correct input parameters.
 <br/>
 
-Then youneed to select the executable `ODE` file and run it.
+Then you need to select the executable `ODE` file and run it.
 
 # Running the code from the Command Line
 1. From a terminal window, change to the `cmake-build-debug\` folder in project directory.
