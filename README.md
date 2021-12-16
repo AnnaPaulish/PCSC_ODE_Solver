@@ -135,7 +135,7 @@ Finally in the Run tab, you can click the "Run doxygen" button and then the "Sho
 <p align="center"> <img src="./readme_images/doxywizard.gif"  width=75% height=75%> </p>
 <br/>
 
-# Testing
+# <a name="Tests"></a> Testing
 
 To ensure a reliable program and to identify any codes that may have arisen during the programming, it is essential to test the code of the entire project.
 In order to do this, the Google Test framework is used. This framework, developed by Google for testing C++ code, provides a structured framework that allows the easy writing and execution
