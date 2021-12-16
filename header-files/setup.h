@@ -11,7 +11,7 @@ namespace E = Eigen;
 class SetUp {
 public:
     /// Constructor
-    SetUp(std::string settings_path="settings.txt");
+    SetUp(std::string settings_path="../settings.txt");
 
     int N; /// total number of steps N
     double dt; /// time step dt

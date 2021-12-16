@@ -1,6 +1,6 @@
 # PCSC_ODE_Solver
 In this repository we provide implementation of the ODE solver for the Project 2: "Ordinary Differential Equations" of the class Programming Concepts in Scientific Computing, MATH-458 <br/>
-_Authors: Driever Leonhard Xaver, Anna Paulish_
+_Authors: Leonhard Xaver Driever, Anna Paulish_
 
 # Introduction
 This project focuses on implementation of numerical methods for solving ordinary differential equations (ODEs) with a given initial value.
@@ -82,8 +82,6 @@ After executing the program, the solution to the ordinary differential equation 
 ## Structure of classes 
 ![alt text](https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/Classes.PNG)
 
-# Tests
-
 # Documentation
 To create documentation follow the instructions below.
 1. Install __doxygen__ from [here](https://www.doxygen.nl/download.html). Scroll down to the section “Sources and Binaries” and download the version that has support for your particular operating system, be it Linux or Mac or Windows.
@@ -122,4 +120,51 @@ In the Expert tab in the __Input__ field you need to specify the `header-files\`
 <p align="center"> <img src="https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/doxywizard.gif"  width=75% height=75%> </p>
 <br/>
 
+# Testing
 
+To ensure a reliable program and to identify any codes that may have arisen during the programming, it is essential to test the code of the entire project.
+In order to do this, the Google Test framework is used. This framework, developed by Google for testing C++ code, provides a structured framework that allows the easy writing and execution
+of unit tests.
+
+Tests have been written for all existing parts of the code, and as all tests have been passed, it is believed that the code is indeed reliable. In case that new methods should be added to this project,
+corresponding tests should also be implemented. The testing is specifically adapted to the contents of the file *test_settings.txt* in the *testing_files* directory, so please do not modify the content of that file as it will falsify the tests. Here, a description shall be provided for the class structure of the tests and for how to run the tests.
+
+### Testing Class Structure
+
+The aim of the testing is to ensure the correctness of all the key parts of the program. The testing structure largely emulates that of the classes in the actual project, as that ensures that whenever code for one of the ODE solving methods is tested, all relevant code that the method and method execution depend on is also tested.
+Consequently, the class diagram for the testing is as shown below. For each class it is also indicated which tests are conducted.
+<br/>
+<p align="center"> <img src="./readme_images/testing_class_structure.jpg" width=75% height=75% alt="Testing class structure"> </p>
+<br/>
+
+Whenever a method is tested, this automatically also envokes the tests for the SetUp class. However, the testing framework ensures that these tests are only run once, not for every method. The class *ODETest* allows for code factorization, as the same rule for calculating the exact solution is applicable to all methods.
+The exact solution for the known problem and time specified in the test settings is used to check if all the methods provide solutions that are within one percent of the exact solution.
+
+For the family of Adams-Bashforth methods, the testing classes inherit from the testing class for the method that is one order lower. This ensures that when one of these methods is tested, all of the methods above it are also tested. This is necessary as these other methods are used during the initialization step and must thus also work correctly. For example, the
+Adams-Bashforth-3 method relies both on the Adams-Bashforth-2 and the Forward Euler methods.
+
+### Running the Tests
+
+All the tests have been implemented in one executable called Google_Tests_run. Provided that the Google Test library has been downloaded and placed in the right location (as explained above in the *Requirements* section), it is then easily possible to run this testing executable.
+
+If it is desired to run the tests using the CLion IDE, simply select "Google_Tests_run" as the executable and run the program.
+
+If it is desired to run the tests from the command line, please use the following steps:
+
+1) In a terminal or other command line app, navigate to the project `cmake-build-debug\` directory (if no such directory exists yet, please create it)
+2) 2. Paste the following commands into the command line app
+
+``` 
+cmake ..
+make
+```
+
+3) Run the testing executable using the following command
+
+``` 
+./Google_Tests_run
+```
+
+### Adding New Tests
+
+If it is desired to add new tests, for example because a new method was implemented, please place the corresponding C++ file in the directory *testing_files* and add the corresponding *#include* statement in the file *testing_main.cpp*.
