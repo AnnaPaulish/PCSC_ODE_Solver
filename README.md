@@ -1,8 +1,9 @@
 # PCSC_ODE_Solver
-In this repository we provide implementation of the ODE solver for the Project 2: "Ordinary Differential Equations" of the class Programming Concepts in Scientific Computing, MATH-458 <br/>
+In this repository we provide the implementation of the ODE solver for the Project 2: "Ordinary Differential Equations" of the 
+class Programming Concepts in Scientific Computing, MATH-458 <br/>
 _Authors: Leonhard Xaver Driever, Anna Paulish_
 
-## Table of content
+## Table of contents
 - [the description of the project task](#Introduction)
 - [the code structure](#code_structure)
 - [hierarchy of classes](#classes_hierarchy)
@@ -22,10 +23,10 @@ We consider the following numerical methods:
 - explicit Runge-Kutta method.
 
 # <a name="code_structure"></a> The code structure
-- `CMakeLists.txt`: the main executable file is main.cpp
+- `CMakeLists.txt`: the main executable file is ODE
 - `header-files\` folder contains all header files
 - `sourse-files\` folder contains all source files
-- `settings.txt` file contains all initial parameters of ODE
+- `settings.txt` file contains all initial parameters of ODE. Allows the user to change inputs without recompiling the code
 - `output.txt` file contains the solution of the ODE after running the program
 
 <br/>
@@ -33,44 +34,57 @@ We consider the following numerical methods:
 
 # <a name="classes_hierarchy"></a> Structure of classes 
 
+In total there are three top level classes: SetUp, ODE, and Output. The ODE class furthermore has a set of daughter classes, one for each of the considered numerical methods.
+As the family of Adams-Bashforth methods (which also includes Forward Euler) use the lower-order variants of the same family for initializing the first
+steps of the solution, these methods inherit from one another. This class inheritence for the ODE class and subsequent methods is shown below.
+
 <div style="width:600px">
 
 ![](readme_images/Classes.PNG)
 </div>
 
 # <a name="Requirements"></a> Requirements
+
+In order to run this code, the following three dependencies must be installed.
+
 1. Eigen library can be downloaded from [here](https://eigen.tuxfamily.org/index.php?title=Main_Page)
-   - copy Eigen/ subdirectory to the project directory
+   - copy the Eigen/ subdirectory to the project directory
 2. GoogleTest can be downloaded from [here](https://github.com/google/googletest)
-   - create an epmty folder `Google_tests/` and extract the contents of googletest-master there
+   - create an epmty folder `Google_tests/` and place the contents of the googletest-master directory there
 3. Doxygen can be installed from [here](https://www.doxygen.nl/download.html)
    - more details on how to customize the documentation can be found [below](#Documentation)
 
+# <a name="run"></a> Running the code in CLion
 
-
-
-# <a name="run"></a> Running the code from CLion
-
-First clone the repo to your preferred location:
+1. Clone the repository to your preferred location:
 
 ```
 git clone https://github.com/ldriever/PCSC_ODE_Solver.git
 ```
 
-Make sure that the `settings.txt` file contains correct input parameters.
-<br/>
+2. Ensure that all dependencies have been installed as described previously.
 
-Then you need to select the executable `ODE` file and run it.
+3. Make sure that the `settings.txt` file contains correct input parameters.
+
+4. Select the executable `ODE` and run it.
 
 # Running the code from the Command Line
-1. From a terminal window, change to the `cmake-build-debug\` folder in project directory.
-2. Paste the following commands 
+1. First clone the repository to your preferred location:
+
+```
+git clone https://github.com/ldriever/PCSC_ODE_Solver.git
+```
+2. Ensure that all dependencies have been installed as described previously.
+3. Make sure that the `settings.txt` file contains correct input parameters.
+4. If it does not yet exist, create a directory called `cmake-build-debug` in the cloned project directory
+5. From a terminal window, change to the `cmake-build-debug\` folder in project directory.
+6. Paste the following commands:
 
 ``` 
 cmake ..
 make
 ```
-3. To run the project paste:
+7. To run the project use the command:
 
 ``` 
 ./ODE 
@@ -100,7 +114,7 @@ After executing the program, the solution to the ordinary differential equation 
 
 # <a name="Documentation"></a> Documentation
 
-To create documentation by yourself follow the instructions below.
+To create the documentation by yourself, follow the instructions below.
 
 ### Step 1
 Install __doxygen__ from [here](https://www.doxygen.nl/download.html). Scroll down to the section “Sources and Binaries” and download the version that has support for your particular operating system, be it Linux or Mac or Windows.
@@ -192,7 +206,7 @@ If it is desired to run the tests using the CLion IDE, simply select "Google_Tes
 If it is desired to run the tests from the command line, please use the following steps:
 
 1) In a terminal or other command line app, navigate to the project `cmake-build-debug\` directory (if no such directory exists yet, please create it)
-2) 2. Paste the following commands into the command line app
+2) Paste the following commands into the command line app
 
 ``` 
 cmake ..
