@@ -39,7 +39,7 @@ E::ArrayXd &ODE::Solve() {
     for (int iteration = method_length; iteration <= N; iteration++) {
         y_new = OneStep(iteration * dt + t_0);
 
-        if (isinf(y_new)) throw InfinityError();
+        if (std::isinf(y_new)) throw InfinityError();
 
         if ((iteration) % sampling_frequency == 0) {
             y[(iteration) / sampling_frequency] = y_new;
