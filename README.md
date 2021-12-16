@@ -33,7 +33,12 @@ git clone https://github.com/ldriever/PCSC_ODE_Solver.git
 - `sourse-files\` folder contains all source files
 - `settings.txt` file contains all initial parameters of ODE
 - `output.txt` file contains the solution of the ODE after running the program
-Make sure that the`settings.txt` file is in the `cmake-build-debug\` folder and contains correct input parameters.
+
+<br/>
+
+Make sure that the `settings.txt` file is in the `cmake-build-debug\` folder and contains correct input parameters.
+<br/>
+
 Then you can run the `main.cpp` file.
 
 ## How to run the code from the Command Line
@@ -41,7 +46,7 @@ Then you can run the `main.cpp` file.
 2. Paste the following commands 
 
 ``` 
-cmake..
+cmake ..
 make
 ```
 3. To run the project paste:
@@ -76,6 +81,7 @@ After executing the program, the solution to the ordinary differential equation 
 
 ## Structure of classes 
 ![alt text](https://github.com/AnnaPaulish/pcsc-project_ODE/blob/main/Classes.PNG)
+
 # Tests
 
 # Documentation
