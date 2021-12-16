@@ -92,9 +92,9 @@ if you want to run the code using CLion. In that case CLion will auto-create the
 In order to run this code, the following three dependencies must be installed in the specified ways.
 
 1. Eigen library can be downloaded from [here](https://eigen.tuxfamily.org/index.php?title=Main_Page)
-   - Download the Eigen library as a zip folder. Once downloaded, unzip the folder and move the directory into the project directory. Then rename the Eigen directory (for example it may be called *eigen-3.4.0*) to *eigen* (make sure that it is lower case)
+   - Download the Eigen library as a zip folder (it is also possible to clone the repository, but then it is necessary to switch to the branch *3.4* in the cloned eigen directory). Once downloaded, unzip the folder and move the directory into the project directory. Then rename the directory (for example it may originally be called *eigen-3.4.0*) to *eigen* (make sure that it is lower case)
 2. GoogleTest can be downloaded from [here](https://github.com/google/googletest)
-   - Download Google Test as a zip folder or clone the repository. Once downloaded, unzip the folder and move the directory into the project directory. Then rename the Google Test directory (for example it may be called *googletest-main*) to *Google_tests* (again make sure to consider capitalization)
+   - Download Google Test as a zip folder or clone the repository. Once downloaded, unzip the folder and move the directory into the project directory. Then rename the directory (for example it may originally be called *googletest-main*) to *Google_tests* (again make sure to consider capitalization)
 3. doxygen can be installed from [here](https://www.doxygen.nl/download.html)
    - doxygen is not necessary for running the code itself, but should be installed in order to see the documentation for the code. Please follow the detailed steps explained in the [documentation section](#Documentation)
 
@@ -108,6 +108,8 @@ In order to run this code, the following three dependencies must be installed in
 4. Select the executable `ODE` and run it.
 
 5. If the name for the output file was specified (i.e. is not *None*) the output file under that name can now be found in the project directory
+
+NOTE: In certain cases a permission error may arise when CLion tries to open the project (for example this has sometimes occurred when using the EPFL Linux virtual machines). In that case please switch to running the program using the command line.
 
 # <a name="run_CL"></a> Running the code from the Command Line
 
